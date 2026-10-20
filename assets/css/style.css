@@ -98,7 +98,7 @@ p { margin: 0; }
 /* ---------- hero ---------- */
 .hero { padding-block: clamp(32px, 5vw, 64px) clamp(48px, 7vw, 88px); }
 .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 25rem); gap: 56px; align-items: start; }
-@media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; gap: 40px; } .hero-visual { max-width: 30rem; margin-top: 0; } .hero-photo { width: 88%; } }
+@media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; gap: 40px; } .hero-visual { max-width: 30rem; } .hero-photo { width: 88%; } }
 .hero-text { display: grid; gap: 18px; justify-items: start; }
 .hero h1 { font-size: clamp(2.1rem, 6vw, 3.6rem); font-weight: 800; letter-spacing: -0.02em; max-width: 17ch; }
 /* "a karate coach" sits on a black belt with a red rank stripe at the end */
@@ -109,12 +109,12 @@ p { margin: 0; }
   padding-bottom: 0.08em; white-space: nowrap;
 }
 /* one short line per idea so it skims */
-.lede { display: grid; gap: 6px; font-size: 1.125rem; color: var(--muted); max-width: 58ch; }
+.lede { display: grid; gap: 6px; margin-block: 10px; font-size: 1.125rem; color: var(--muted); max-width: 58ch; }
 .lede p { padding-left: 24px; position: relative; }
 .lede p::before { content: ""; position: absolute; left: 0; top: .72em; width: 14px; height: 5px; border-radius: 1px; background: var(--belt-black); box-shadow: inset -4px 0 0 var(--shu); }
 
 /* photo with the certificate card overlapping its bottom edge */
-.hero-visual { display: grid; justify-items: end; padding-right: 14px; margin-top: calc(var(--step--1) * 1.6 + 18px); }
+.hero-visual { display: grid; justify-items: end; padding-right: 14px; }
 .hero-photo {
   display: block; width: 80%; height: auto; aspect-ratio: 780 / 650; object-fit: cover;
   border-radius: 14px; border: 1.5px solid var(--ink);
@@ -213,8 +213,6 @@ section.block { padding-block: clamp(56px, 8vw, 96px); border-top: 1px solid var
 .did { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
 .did li { display: flex; gap: 10px; }
 .did li::before { content: ""; flex: none; width: 14px; height: 5px; margin-top: .62em; border-radius: 1px; background: var(--belt-black); box-shadow: inset -4px 0 0 var(--shu); }
-.tags { display: flex; flex-wrap: wrap; gap: 6px; }
-.tags span { font-family: var(--mono); font-size: 0.75rem; padding: 3px 9px; border-radius: 999px; background: var(--soft); }
 .more-work { margin-top: 48px; color: var(--muted); }
 .more-work a { color: var(--ink); font-weight: 600; text-underline-offset: 4px; }
 
