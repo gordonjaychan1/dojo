@@ -22,8 +22,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Figtree:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap">
 <!-- only the handful of kanji on the page, so this font file stays tiny -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@700&text=%E7%A9%BA%E6%89%8B%E9%81%93%E4%B8%80%E4%BA%8C%E4%B8%89%E5%9B%9B%E4%BA%94%E5%85%AD%E6%97%A5%E6%9C%AC%E8%AA%9E&display=swap">
-<link rel="stylesheet" href="assets/css/style.css?v=19">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@700&text=%E7%A9%BA%E6%89%8B%E9%81%93%E4%B8%80%E4%BA%8C%E4%B8%89%E5%9B%9B%E4%BA%94%E5%85%AD%E6%97%A5%E6%9C%AC%E8%AA%9E%E5%A3%B0&display=swap">
+<link rel="stylesheet" href="assets/css/style.css?v=23">
 <script src="assets/js/app.js?v=2" defer></script>
 </head>
 <body>
@@ -64,7 +64,7 @@
       </div>
 
       <div class="hero-visual">
-        <img class="hero-photo" src="images/gordon-kick.jpg" alt="Gordon in a white gi and black belt throwing a side kick at practice" width="780" height="650" fetchpriority="high">
+        <img class="hero-photo" src="images/gordon-teaching.jpg" alt="Gordon in a white gi and black belt, smiling as he explains a technique to a student" width="900" height="750" fetchpriority="high">
         <aside class="cert" aria-label="About Gordon">
           <span class="cert-v" aria-hidden="true">空手道</span>
           <div class="cert-head">
@@ -85,7 +85,7 @@
     <div class="wrap">
       <div class="block-head">
         <p class="label"><span class="kn" aria-hidden="true">一</span>What you get</p>
-        <h2>What your dojo site needs</h2>
+        <h2>Everything your dojo website includes</h2>
         <p>For new families finding you, and students checking in between classes.</p>
       </div>
 
@@ -151,7 +151,7 @@
       <div class="block-head">
         <p class="label"><span class="kn" aria-hidden="true">二</span>Case studies</p>
         <h2>Dojo sites I've built</h2>
-        <p>Two schools I know well: my home dojo, and the dojo of the world champion I train under. Drag the sliders to compare before and after.</p>
+        <p>My home dojo of 12 years, and the dojo of 2012 World Champion Rika Usami, a true legend in the karate world. It's an honor to have my work represent the dojo of someone of her caliber. Drag the sliders to compare before and after.</p>
       </div>
 
       <article class="case" id="aabba">
@@ -218,17 +218,53 @@
     </div>
   </section>
 
+  <!-- Testimonials are hidden until real quotes come in: swap in the quotes, then remove "hidden" -->
+  <section class="block band testimonials" id="testimonials" hidden>
+    <div class="wrap">
+      <div class="block-head">
+        <p class="label"><span class="kn" aria-hidden="true">声</span>Testimonials</p>
+        <h2>What people are saying</h2>
+      </div>
+      <div class="quotes">
+        <figure class="quote sample">
+          <blockquote>Sample testimonial from AABBA Karate.</blockquote>
+          <figcaption><b>Sensei name</b><span>Head instructor, AABBA Karate · San Ramon, CA</span></figcaption>
+        </figure>
+        <figure class="quote sample">
+          <!-- Rika Usami: her words in Japanese, with Gordon's English translation underneath -->
+          <blockquote>Sample testimonial, in English.</blockquote>
+          <p class="quote-jp" lang="ja">日本語の原文</p>
+          <figcaption><b>Rika Usami</b><span>2012 Kata World Champion · Usami Rika Dojo, Tottori, Japan</span></figcaption>
+        </figure>
+        <figure class="quote sample">
+          <blockquote>Sample testimonial from a student or parent.</blockquote>
+          <figcaption><b>Name</b><span>AABBA parent or student</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
   <section class="block" id="about">
     <div class="wrap about">
       <img class="about-photo" src="images/gordon-coaching.jpg" alt="Gordon in a white gi and black belt correcting a white-belt student's technique" loading="lazy" width="1000" height="933">
       <div class="about-text">
         <p class="label"><span class="kn" aria-hidden="true">三</span>About me</p>
         <h2>A karate coach who builds websites</h2>
-        <p>I started karate at six and trained at AABBA Karate in San Ramon for 12 years, where I earned my shodan in Hayashi-ha Shitō-ryū. I've also trained in Shotokan for six years, boxed for three, and spent two weeks training karate in Okinawa. Today I coach the Santa Clara University Karate club and train under 2012 World Champion Rika Usami.</p>
-        <p>By day I'm a quality assurance (QA) engineer at a software company. My job is finding what breaks before customers do, and I check your site the same way before it goes live.</p>
-        <p>I've been the student, the competitor, and the coach, so I build sites around what each of them needs, and around the parent deciding whether to sign their child up.</p>
-        <p>Two months ago I started judo, so I'm a white belt again. I know exactly what it feels like to walk into a new school for the first time, and that's the person your website is for.</p>
-        <p>I also built a <a href="https://gordonjaychan.com/KataDataAnalysis/" target="_blank" rel="noopener">data analysis site for the 2024–25 WKF kata season</a>, because I like digging into the sport.</p>
+        <div class="about-group">
+          <h3>On the mat</h3>
+          <p>I started karate at six and trained at AABBA Karate in San Ramon for 12 years, where I earned my shodan in Hayashi-ha Shitō-ryū. I've also trained in Shotokan for six years and boxed for three.</p>
+          <p>Nowadays, I coach the Santa Clara University Karate club. A few times a year, I travel to Japan and Okinawa to train with 2012 Karate World Champion Rika Usami, a legend of the sport, and at traditional Okinawan karate dojos.</p>
+        </div>
+        <div class="about-group">
+          <h3>Every side of the dojo</h3>
+          <p>I've been the student, the competitor, and the coach, so I build sites around what each of them needs, and around the parent deciding whether to sign their child up.</p>
+          <p>Two months ago, I started judo, and I'm happy to be a white belt again! I know exactly what it feels like to walk into a new school for the first time, and that's one of the people your website will serve.</p>
+        </div>
+        <div class="about-group">
+          <h3>Behind the screen</h3>
+          <p>By day I'm a quality assurance (QA) engineer at a software company. My job is finding what breaks before customers do, and I check your site the same way before it goes live.</p>
+          <p>I also built a <a href="https://gordonjaychan.com/KataDataAnalysis/" target="_blank" rel="noopener">data analysis site for the 2024–25 WKF kata season</a>, because I love digging into the numbers behind martial arts competition.</p>
+        </div>
       </div>
     </div>
   </section>

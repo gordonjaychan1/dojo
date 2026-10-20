@@ -116,7 +116,7 @@ p { margin: 0; }
 /* photo with the certificate card overlapping its bottom edge */
 .hero-visual { display: grid; justify-items: end; padding-right: 14px; }
 .hero-photo {
-  display: block; width: 80%; height: auto; aspect-ratio: 780 / 650; object-fit: cover;
+  display: block; width: 80%; height: auto; aspect-ratio: 6 / 5; object-fit: cover;
   border-radius: 14px; border: 1.5px solid var(--ink);
 }
 .hero-visual .cert { justify-self: stretch; margin-top: -56px; }
@@ -263,6 +263,20 @@ section.block { padding-block: clamp(56px, 8vw, 96px); border-top: 1px solid var
 .story b { display: block; color: var(--gry); font-weight: 700; }
 .story u { color: var(--gry); font-weight: 600; text-underline-offset: 3px; white-space: nowrap; }
 
+/* ---------- testimonials (lavender band; hidden until real quotes come in) ---------- */
+.testimonials { border-top: 0; }
+.testimonials .label { color: var(--gry); }
+.quotes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+@media (max-width: 960px) { .quotes { grid-template-columns: 1fr; } }
+.quote { margin: 0; padding: 24px; border: 1px solid var(--line); border-radius: var(--radius); display: grid; gap: 14px; align-content: start; background: color-mix(in srgb, var(--lav) 70%, #fff); }
+.quote.sample { border-style: dashed; }
+.quote blockquote { margin: 0; font-family: var(--display); font-size: var(--step-1); font-weight: 600; line-height: 1.35; }
+.quote blockquote::before { content: "\201C"; display: block; font-size: 3rem; line-height: .7; margin-bottom: 4px; color: var(--shu); }
+.quote-jp { font-family: var(--mincho), "Hiragino Mincho ProN", "Yu Mincho", serif; font-size: 0.9375rem; color: var(--muted); }
+.quote figcaption { display: grid; gap: 2px; }
+.quote figcaption b { font-weight: 600; }
+.quote figcaption span { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); letter-spacing: .03em; }
+
 /* ---------- about ---------- */
 .about { display: grid; grid-template-columns: minmax(0, 26rem) minmax(0, 1fr); gap: 32px 56px; align-items: center; }
 @media (max-width: 760px) { .about { grid-template-columns: 1fr; } }
@@ -270,6 +284,10 @@ section.block { padding-block: clamp(56px, 8vw, 96px); border-top: 1px solid var
 .about-text h2 { font-size: var(--step-3); font-weight: 800; letter-spacing: -0.015em; }
 .about-text p:not(.label) { color: var(--muted); }
 .about-text p a { color: var(--ink); text-underline-offset: 3px; }
+/* three short groups: karate, who the site is for, the tech side */
+.about-group { display: grid; gap: 8px; margin-top: 12px; }
+.about-group h3 { display: flex; align-items: center; gap: 10px; font-size: var(--step-1); font-weight: 700; }
+.about-group h3::before { content: ""; flex: none; width: 22px; height: 7px; border-radius: 1px; background: var(--belt-black); box-shadow: inset -6px 0 0 var(--shu), 0 0 0 1px rgb(231 221 255 / .25); }
 .about-photo {
   display: block; width: 100%; max-width: 26rem; height: auto; aspect-ratio: 1000 / 933; object-fit: cover;
   border-radius: 14px; border: 1.5px solid var(--ink); box-shadow: 10px 10px 0 var(--belt-black);
