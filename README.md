@@ -12,9 +12,12 @@ gordonjaychan.com domain. It is not linked from the main site's menu.
 
 ```
 index.html            The whole page
+demo.html             Members-only demo (/dojo/demo): a made-up school, 3 groups, passwords shown on the page
 favicon.svg           The site gourd, wearing a black belt
 assets/css/style.css  All styling (same base colors and fonts as the main site)
-assets/js/app.js      Before/after sliders
+assets/js/app.js      Before/after sliders, contact popup
+assets/css/demo.css   Demo page only (the pretend school site inside the frame)
+assets/js/demo.js     Demo password check (plain check; real client sites use encryption)
 images/               Case-study screenshots, logos, og-dojo.jpg (1200×630 share card)
 ```
 

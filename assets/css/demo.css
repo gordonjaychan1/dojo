@@ -1,0 +1,112 @@
+/* Members-only demo page. The page around it uses the dojo landing page's look (style.css);
+   the pretend school site inside the browser frame (.ds) has its own light look,
+   so it reads as "a client's website", not Gordon's. */
+
+.demo-intro { padding-block: clamp(28px, 4vw, 48px) 24px; }
+.demo-intro .block-head { margin-bottom: 24px; }
+.demo-intro h1 { font-size: var(--step-3); font-weight: 800; letter-spacing: -0.015em; }
+
+.pw-hints { display: grid; gap: 10px; }
+.pw-list { display: flex; flex-wrap: wrap; gap: 10px; }
+.pw {
+  display: grid; gap: 2px; text-align: left; cursor: pointer;
+  padding: 10px 16px; border-radius: var(--radius); border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+  font-family: var(--body); font-size: 0.9375rem; transition: border-color .15s, background .15s;
+}
+.pw:hover { border-color: var(--ink); background: var(--soft); }
+.pw b { font-weight: 600; }
+.pw code { font-family: var(--mono); font-size: 0.8125rem; color: var(--muted); }
+
+.demo-frame-wrap { padding-bottom: clamp(48px, 7vw, 80px); }
+.demo-after { display: grid; gap: 16px; margin-top: 24px; max-width: 46rem; }
+.demo-after p { color: var(--muted); }
+.demo-ctas { display: flex; flex-wrap: wrap; gap: 10px; }
+
+/* ---------- the pretend school site ---------- */
+.ds {
+  --p-bg: #FAF7F2; --p-ink: #1F1B24; --p-muted: #5D5763; --p-line: #E3DDD3; --p-red: #B3261E; --p-card: #FFFFFF;
+  background: var(--p-bg); color: var(--p-ink); font-family: var(--body); min-height: 30rem;
+  color-scheme: light;
+}
+.ds-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px clamp(16px, 3vw, 28px); background: var(--p-ink); color: #F5F0E8; }
+.ds-logo { display: flex; align-items: center; gap: 10px; font-family: Georgia, "Times New Roman", serif; font-weight: 700; font-size: 1.125rem; }
+.ds-mark { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 4px; background: var(--p-red); color: #fff; font-family: var(--mincho); font-size: 0.8rem; line-height: 1; writing-mode: vertical-rl; letter-spacing: .05em; }
+.ds-nav { display: flex; gap: 16px; font-size: 0.875rem; opacity: .85; }
+.ds-nav .on { text-decoration: underline; text-decoration-color: var(--p-red); text-decoration-thickness: 2px; text-underline-offset: 6px; }
+@media (max-width: 520px) { .ds-nav span:not(.on) { display: none; } }
+
+.ds h2, .ds h3 { font-family: Georgia, "Times New Roman", serif; color: var(--p-ink); line-height: 1.2; }
+
+.ds-gate { max-width: 26rem; margin: 0 auto; padding: clamp(28px, 5vw, 48px) 20px; display: grid; gap: 14px; }
+.ds-gate h2 { font-size: 1.75rem; }
+.ds-gate p { color: var(--p-muted); }
+.ds-gate label { display: grid; gap: 6px; font-size: 0.875rem; font-weight: 600; }
+.ds-gate select, .ds-gate input {
+  font: inherit; font-weight: 400; font-size: 1rem; color: var(--p-ink); background: var(--p-card);
+  border: 1px solid #CFC7BB; border-radius: 6px; padding: 10px 12px; width: 100%;
+}
+.ds-gate select:focus, .ds-gate input:focus { outline: 2px solid var(--p-ink); outline-offset: 1px; }
+.ds-btn { font: inherit; font-weight: 600; padding: 11px 18px; border: 0; border-radius: 6px; background: var(--p-red); color: #fff; cursor: pointer; }
+.ds-btn:hover { background: #951E18; }
+.ds-msg { min-height: 1.5em; font-size: 0.9375rem; }
+.ds-msg.error { color: var(--p-red) !important; font-weight: 600; }
+.ds-gate.shake { animation: shake .3s; }
+@keyframes shake { 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
+
+.ds-panel { padding: clamp(20px, 3.5vw, 32px) clamp(16px, 3vw, 28px) clamp(24px, 4vw, 36px); }
+.ds-panel-head { display: flex; justify-content: space-between; align-items: start; gap: 16px; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 2px solid var(--p-ink); }
+.ds-panel-head > div { display: grid; gap: 4px; }
+.ds-panel-head h2 { font-size: clamp(1.5rem, 3.5vw, 2rem); }
+.ds-panel-head p:not(.ds-kicker) { color: var(--p-muted); }
+.ds-kicker { font-family: var(--mono); font-size: 0.75rem; letter-spacing: .06em; text-transform: uppercase; color: var(--p-red); }
+.ds-lock { flex: none; font: inherit; font-size: 0.875rem; font-weight: 600; padding: 7px 14px; border-radius: 6px; border: 1px solid #CFC7BB; background: var(--p-card); color: var(--p-ink); cursor: pointer; }
+.ds-lock:hover { border-color: var(--p-ink); }
+.ds-lock::before { content: "🔒 "; }
+
+.ds-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+@media (max-width: 760px) { .ds-grid { grid-template-columns: 1fr; } }
+.ds-card { background: var(--p-card); border: 1px solid var(--p-line); border-radius: 8px; padding: 18px; display: grid; gap: 12px; align-content: start; min-width: 0; }
+.ds-card.wide { grid-column: 1 / -1; }
+.ds-card h3 { font-size: 1.1875rem; }
+.ds-note { color: var(--p-muted); font-size: 0.875rem; margin-top: -6px; }
+
+.ds-curr { margin: 0; display: grid; gap: 10px; }
+.ds-curr dt { font-weight: 600; font-size: 0.875rem; }
+.ds-curr dd { margin: 0; color: var(--p-muted); font-size: 0.9375rem; }
+.ds-terms { margin: 0; display: grid; }
+.ds-terms div { display: flex; justify-content: space-between; gap: 12px; padding: 7px 0; border-bottom: 1px solid var(--p-line); font-size: 0.9375rem; }
+.ds-terms div:last-child { border-bottom: 0; }
+.ds-terms dt { font-weight: 600; font-style: italic; }
+.ds-terms dd { margin: 0; color: var(--p-muted); text-align: right; }
+
+.ds-video { position: relative; display: block; width: 100%; max-width: 40rem; padding: 0; border: 0; border-radius: 6px; overflow: hidden; cursor: pointer; background: #000; aspect-ratio: 16 / 9; font: inherit; color: #fff; text-align: left; }
+.ds-video img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; opacity: .8; transition: opacity .2s; }
+.ds-video:hover img { opacity: .65; }
+.ds-play { position: absolute; top: 50%; left: 50%; width: 68px; height: 48px; margin: -24px 0 0 -34px; border-radius: 12px; background: var(--p-red); }
+.ds-play::after { content: ""; position: absolute; left: 27px; top: 14px; border-style: solid; border-width: 10px 0 10px 17px; border-color: transparent transparent transparent #fff; }
+.ds-video-cap { position: absolute; left: 0; right: 0; bottom: 0; padding: 28px 16px 14px; background: linear-gradient(transparent, rgb(0 0 0 / .75)); display: grid; gap: 2px; font-size: 0.875rem; }
+.ds-video-cap b { font-size: 1rem; }
+.ds-video-note { position: absolute; inset: 0; display: grid; place-items: center; padding: 24px; text-align: center; background: rgb(20 18 28 / .82); font-size: 1rem; font-weight: 600; line-height: 1.5; }
+
+.ds-list { margin: 0; padding-left: 20px; display: grid; gap: 8px; font-size: 0.9375rem; }
+.ds-list li::marker { color: var(--p-red); }
+.ds-plan { margin: 0; padding: 0; list-style: none; display: grid; gap: 0; counter-reset: plan; }
+.ds-plan li { display: grid; grid-template-columns: 4.5rem 1fr; gap: 8px; padding: 8px 0; border-bottom: 1px solid var(--p-line); font-size: 0.9375rem; }
+.ds-plan li:last-child { border-bottom: 0; }
+.ds-plan span { font-family: var(--mono); font-size: 0.8125rem; color: var(--p-red); padding-top: 2px; }
+
+.ds-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.ds-table { width: 100%; border-collapse: collapse; font-size: 0.9375rem; min-width: 30rem; }
+.ds-table th { text-align: left; font-size: 0.75rem; font-family: var(--mono); letter-spacing: .05em; text-transform: uppercase; color: var(--p-muted); font-weight: 500; padding: 0 12px 8px 0; border-bottom: 2px solid var(--p-ink); }
+.ds-table td { padding: 10px 12px 10px 0; border-bottom: 1px solid var(--p-line); }
+.ds-table tr:last-child td { border-bottom: 0; }
+.ds-table td:first-child { white-space: nowrap; }
+
+.ds-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.ds-gallery figure { margin: 0; display: grid; gap: 4px; }
+.ds-gallery img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 4px; display: block; }
+.ds-gallery figcaption { font-size: 0.75rem; color: var(--p-muted); }
+
+/* header: keep "← Dojo websites" on one line; on phones show just the gourd */
+.top nav a { white-space: nowrap; }
+@media (max-width: 520px) { .brand-name { display: none; } }

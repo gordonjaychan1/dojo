@@ -214,6 +214,12 @@ section.block { padding-block: clamp(56px, 8vw, 96px); border-top: 1px solid var
 .did li { display: flex; gap: 10px; }
 .did li::before { content: ""; flex: none; width: 14px; height: 5px; margin-top: .62em; border-radius: 1px; background: var(--belt-black); box-shadow: inset -4px 0 0 var(--shu); }
 .more-work { margin-top: 48px; color: var(--muted); }
+/* case-study outcome, in a lavender callout so it stands out from the description */
+.result { display: grid; gap: 6px; padding: 14px 16px; border-radius: var(--radius); background: var(--lav); color: var(--gry); }
+.result .label { color: var(--gry); }
+.result p:not(.label) { font-size: 0.9375rem; }
+.need .try { justify-self: start; font-weight: 600; font-size: 0.9375rem; color: var(--ink); text-underline-offset: 4px; }
+.faq details p a { color: var(--ink); font-weight: 600; text-underline-offset: 3px; white-space: nowrap; }
 .more-work a { color: var(--ink); font-weight: 600; text-underline-offset: 4px; }
 
 .browser {
