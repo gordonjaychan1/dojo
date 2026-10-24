@@ -279,9 +279,14 @@ section.block { padding-block: clamp(56px, 8vw, 96px); border-top: 1px solid var
 .quote blockquote { margin: 0; font-family: var(--display); font-size: var(--step-1); font-weight: 600; line-height: 1.35; }
 .quote blockquote::before { content: "\201C"; display: block; font-size: 3rem; line-height: .7; margin-bottom: 4px; color: var(--shu); }
 .quote-jp { font-family: var(--mincho), "Hiragino Mincho ProN", "Yu Mincho", serif; font-size: 0.9375rem; color: var(--muted); }
-.quote figcaption { display: grid; gap: 2px; }
+.quote figcaption { display: flex; align-items: center; gap: 12px; }
+.quote figcaption > span { display: grid; gap: 2px; }
+.quote-logo { width: 40px; height: 40px; border-radius: 8px; object-fit: contain; background: #fff; flex: none; }
+/* a single quote gets the full width and bigger type, until more come in */
+.quotes:has(> .quote:only-of-type) { grid-template-columns: minmax(0, 52rem); }
+.quotes:has(> .quote:only-of-type) blockquote { font-size: clamp(1.25rem, 2.4vw, 1.625rem); }
 .quote figcaption b { font-weight: 600; }
-.quote figcaption span { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); letter-spacing: .03em; }
+.quote figcaption > span > span { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); letter-spacing: .03em; }
 
 /* ---------- about ---------- */
 .about { display: grid; grid-template-columns: minmax(0, 24rem) minmax(0, 1fr); gap: 32px 56px; align-items: center; }
