@@ -9,7 +9,7 @@ document.querySelectorAll(".ba").forEach((ba) => {
 // Fetch the lower screenshots once the page has loaded, so the sliders are ready when you scroll to them
 addEventListener("load", () => document.querySelectorAll('img[loading="lazy"]').forEach((img) => (img.loading = "eager")));
 
-// Contact popup: every "Get started" button opens it, and so does a link to /dojo/#contact
+// Contact popup: every "Contact" button opens it, and so does a link to /dojo/#contact
 const dialog = document.getElementById("contact");
 if (dialog && dialog.showModal) {
   const open = (e) => {
@@ -28,6 +28,9 @@ if (dialog && dialog.showModal) {
   if (location.hash === "#contact") open();
 }
 
+// Text in the current language (i18n.js sets window.t); English if that file didn't load
+const tr = (key, en) => (window.t ? window.t(key, en) : en);
+
 // The form posts to Formspree in the background and shows a thank-you in place
 const form = document.getElementById("dojo-form");
 if (form) {
@@ -40,14 +43,14 @@ if (form) {
     const btn = form.querySelector('button[type="submit"]');
     const label = btn.textContent;
     btn.disabled = true;
-    btn.textContent = "Sending…";
+    btn.textContent = tr("form.sending", "Sending…");
     status.classList.remove("error");
     status.textContent = "";
     try {
       const res = await fetch(form.action, { method: "POST", body: data, headers: { Accept: "application/json" } });
       if (!res.ok) {
         const out = await res.json().catch(() => ({}));
-        throw new Error((out.errors || []).map((x) => x.message).join(" ") || "The message didn't go through.");
+        throw new Error((out.errors || []).map((x) => x.message).join(" ") || tr("form.failed", "The message didn't go through."));
       }
       const done = document.createElement("p");
       done.className = "form-done";
@@ -56,7 +59,7 @@ if (form) {
       form.replaceWith(done);
     } catch (err) {
       status.classList.add("error");
-      status.textContent = `${err.message} Please try again, or email gordonjaychan1@gmail.com.`;
+      status.textContent = `${err.message} ${tr("form.retry", "Please try again, or email gordonjaychan1@gmail.com.")}`;
       btn.disabled = false;
       btn.textContent = label;
     }

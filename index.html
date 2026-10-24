@@ -23,8 +23,11 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Figtree:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap">
 <!-- only the handful of kanji on the page, so this font file stays tiny -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@700&text=%E7%A9%BA%E6%89%8B%E9%81%93%E4%B8%80%E4%BA%8C%E4%B8%89%E5%9B%9B%E4%BA%94%E5%85%AD%E6%97%A5%E6%9C%AC%E8%AA%9E%E5%A3%B0&display=swap">
-<link rel="stylesheet" href="assets/css/style.css?v=28">
-<script src="assets/js/app.js?v=2" defer></script>
+<link rel="stylesheet" href="assets/css/style.css?v=36">
+<!-- pick the language before the page paints, so Japanese visitors don't see a flash of English -->
+<script>try{var q=new URLSearchParams(location.search).get("lang"),s=localStorage.getItem("dojo-lang"),l=q==="ja"||q==="en"?q:s||((navigator.language||"").toLowerCase().indexOf("ja")===0?"ja":"en");document.documentElement.setAttribute("data-lang",l)}catch(e){}</script>
+<script src="assets/js/i18n.js?v=6" defer></script>
+<script src="assets/js/app.js?v=3" defer></script>
 </head>
 <body>
 
@@ -33,15 +36,16 @@
     <span class="brand">
       <img src="favicon.svg" alt="" width="28" height="32">
       <span class="brand-name">Gordon Jay Chan</span>
-      <span class="brand-tag">Dojo websites</span>
+      <span class="brand-tag" data-i18n="brand.tag">Dojo websites</span>
     </span>
-    <nav aria-label="On this page">
-      <a href="#needs" class="hide-sm">What you get</a>
-      <a href="#work" class="hide-sm">Dojo sites</a>
-      <a href="#about" class="hide-sm">About</a>
-      <a href="#pricing" class="hide-sm">Pricing</a>
-      <a href="#faq" class="hide-sm">FAQ</a>
-      <a class="btn primary sm" href="#contact" data-contact>Contact</a>
+    <nav aria-label="On this page" data-i18n-aria="nav.aria">
+      <a href="#work" class="hide-sm" data-i18n="nav.work">Dojo sites</a>
+      <a href="#about" class="hide-sm" data-i18n="nav.about">About</a>
+      <a href="#pricing" class="hide-sm" data-i18n="nav.pricing">Pricing</a>
+      <a href="#faq" class="hide-sm" data-i18n="nav.faq">FAQ</a>
+      <!-- shows the other language: 日本語 on the English page, English on the Japanese page -->
+      <button type="button" class="lang-switch" lang="ja" aria-label="日本語で表示">日本語</button>
+      <a class="btn primary sm" href="#contact" data-contact data-i18n="nav.contact">Contact</a>
     </nav>
   </div>
 </header>
@@ -50,32 +54,32 @@
   <section class="hero">
     <div class="wrap hero-grid">
       <div class="hero-text">
-        <p class="label">For dojo owners &amp; head instructors</p>
-        <h1>Websites for martial arts schools, built by a <span class="belt-line">karate coach</span></h1>
+        <p class="label" data-i18n="hero.label">For dojo owners &amp; head instructors</p>
+        <h1 data-i18n="hero.h1">Websites for martial arts schools, built by a <span class="belt-line">karate coach</span></h1>
         <div class="lede">
-          <p>I know what parents look for before signing their child up.</p>
-          <p>2+ years of professional software testing experience has taught me to build sites that look great on launch day and keep working for years.</p>
-          <p>One monthly fee covers building, hosting, and unlimited updates anytime.</p>
+          <p data-i18n="hero.l1">I know what parents look for before signing their child up.</p>
+          <p data-i18n="hero.l2">2+ years of professional software testing experience has taught me to build sites that look great on launch day and keep working for years.</p>
+          <p data-i18n="hero.l3">One monthly fee covers building, hosting, and unlimited updates anytime.</p>
         </div>
         <div class="hero-ctas">
-          <a class="btn primary big" href="#contact" data-contact>Get a website for your dojo <span aria-hidden="true">→</span></a>
-          <a class="btn big" href="#work">See dojo sites I've built</a>
+          <a class="btn primary big" href="#contact" data-contact data-i18n="hero.cta">Get a website for your dojo <span aria-hidden="true">→</span></a>
+          <a class="btn big" href="#work" data-i18n="hero.cta2">See dojo sites I've built</a>
         </div>
-        <p class="styles"><span>Karate</span><span>Boxing</span><span>Jiu jitsu</span><span>Taekwondo</span><span>MMA</span><span>Judo</span><span>Kung fu</span><span>+ more</span></p>
+        <p class="styles" data-i18n="hero.styles"><span>Karate</span><span>Boxing</span><span>Jiu jitsu</span><span>Taekwondo</span><span>MMA</span><span>Judo</span><span>Kung fu</span><span>+ more</span></p>
       </div>
 
       <div class="hero-visual">
-        <img class="hero-photo" src="images/hero-coaching.jpg" alt="Gordon in a white gi and black belt, smiling as he corrects a white belt's technique" width="1000" height="918" fetchpriority="high">
-        <aside class="cert" aria-label="About Gordon">
+        <img class="hero-photo" src="images/hero-coaching.jpg" alt="Gordon in a white gi and black belt, smiling as he corrects a white belt's technique" data-i18n-alt="hero.alt" width="1000" height="918" fetchpriority="high">
+        <aside class="cert" aria-label="About Gordon" data-i18n-aria="cert.aria">
           <span class="cert-v" aria-hidden="true">空手道</span>
           <div class="cert-head">
-            <p class="cert-kicker">Your web designer</p>
+            <p class="cert-kicker" data-i18n="cert.kicker">Your web designer</p>
             <p class="cert-name">Gordon Jay Chan</p>
           </div>
           <ul class="cert-list">
-            <li><b>17 years of karate</b><span>Shodan, Hayashi-ha Shitō-ryū</span></li>
-            <li><b>Quality assurance engineer</b><span>Testing software for a living</span></li>
-            <li><b>Coach, Santa Clara University Karate club</b></li>
+            <li data-i18n="cert.1"><b>17 years of karate</b><span>Shodan, Hayashi-ha Shitō-ryū</span></li>
+            <li data-i18n="cert.2"><b>Quality assurance engineer</b><span>Testing software for a living</span></li>
+            <li data-i18n="cert.3"><b>Coach, Santa Clara University Karate club</b></li>
           </ul>
         </aside>
       </div>
@@ -85,63 +89,63 @@
   <section class="block" id="needs">
     <div class="wrap">
       <div class="block-head">
-        <p class="label"><span class="kn" aria-hidden="true">一</span>What you get</p>
-        <h2>Everything your dojo website includes</h2>
-        <p>For new families finding you, and students checking in between classes.</p>
+        <p class="label"><span class="kn" aria-hidden="true">一</span><span data-i18n="needs.label">What you get</span></p>
+        <h2 data-i18n="needs.h2">Everything your dojo website includes</h2>
+        <p data-i18n="needs.p">For new families finding you, and students checking in between classes.</p>
       </div>
 
       <ul class="needs">
         <li class="need feature" style="--belt: var(--belt-white)">
           <div class="need-text">
             <span class="belt" aria-hidden="true"></span>
-            <h3>Free trial class signup, front and center</h3>
-            <p>A trial class button on every page. Requests land in your email with the student's age and class, so you can call back the same day.</p>
+            <h3 data-i18n="n1.h">Free trial class signup, front and center</h3>
+            <p data-i18n="n1.p">A trial class button on every page. Requests land in your email with the student's age and class, so you can call back the same day.</p>
           </div>
           <div class="mock" aria-hidden="true">
-            <p class="mock-title">Try a free class</p>
-            <p class="mock-label">Who's training?</p>
-            <div class="mock-chips"><span class="on">Child</span><span>Teen</span><span>Adult</span></div>
-            <p class="mock-label">Class</p>
-            <div class="mock-select">Little Dragons, ages 5–7 · Tue 4:30</div>
-            <div class="mock-btn">Book my free class</div>
+            <p class="mock-title" data-i18n="mock.title">Try a free class</p>
+            <p class="mock-label" data-i18n="mock.who">Who's training?</p>
+            <div class="mock-chips" data-i18n="mock.chips"><span class="on">Child</span><span>Teen</span><span>Adult</span></div>
+            <p class="mock-label" data-i18n="mock.class">Class</p>
+            <div class="mock-select" data-i18n="mock.select">Little Dragons, ages 5–7 · Tue 4:30</div>
+            <div class="mock-btn" data-i18n="mock.btn">Book my free class</div>
           </div>
         </li>
         <li class="need" style="--belt: var(--belt-yellow)">
           <span class="belt" aria-hidden="true"></span>
-          <h3>Children's program pages written for parents</h3>
-          <p>Parents decide, so this page answers their questions: ages, what a first class looks like, and what to wear.</p>
+          <h3 data-i18n="n2.h">Children's program pages written for parents</h3>
+          <p data-i18n="n2.p">Parents decide, so this page answers their questions: ages, what a first class looks like, and what to wear.</p>
         </li>
         <li class="need" style="--belt: var(--belt-orange)">
           <span class="belt" aria-hidden="true"></span>
-          <h3>Schedule &amp; pricing that stay current</h3>
-          <p>Moved a class or changed a rate? Text me and it's updated.</p>
+          <h3 data-i18n="n3.h">Schedule &amp; pricing that stay current</h3>
+          <p data-i18n="n3.p">Moved a class or changed a rate? Text me and it's updated.</p>
         </li>
         <li class="need" style="--belt: var(--belt-green)">
           <span class="belt" aria-hidden="true"></span>
-          <h3>Instructor bios &amp; lineage</h3>
-          <p>Your instructors, their ranks, and the teachers your style comes from.</p>
+          <h3 data-i18n="n4.h">Instructor bios &amp; lineage</h3>
+          <p data-i18n="n4.p">Your instructors, their ranks, and the teachers your style comes from.</p>
         </li>
         <li class="need" style="--belt: var(--belt-blue)">
           <span class="belt" aria-hidden="true"></span>
-          <h3>Members-only section</h3>
-          <p>Rank curriculum, technique videos, private photo galleries, or anything only certain students should see, behind a password.</p>
-          <a class="try" href="demo">Try the demo →</a>
+          <h3 data-i18n="n5.h">Members-only section</h3>
+          <p data-i18n="n5.p">Rank curriculum, technique videos, private photo galleries, or anything only certain students should see, behind a password.</p>
+          <a class="try" href="demo" data-i18n="n5.try">Try the demo →</a>
         </li>
         <li class="need" style="--belt: var(--belt-purple)">
           <span class="belt" aria-hidden="true"></span>
-          <h3>Events &amp; tournament results</h3>
-          <p>Seminars, belt test dates, closures, and medal results parents love to share.</p>
+          <h3 data-i18n="n6.h">Events &amp; tournament results</h3>
+          <p data-i18n="n6.p">Seminars, belt test dates, closures, and medal results parents love to share.</p>
         </li>
         <li class="need" style="--belt: var(--belt-brown)">
           <span class="belt" aria-hidden="true"></span>
-          <h3>Photo &amp; video gallery</h3>
-          <p>Class photos and tournament videos that load fast on a phone.</p>
+          <h3 data-i18n="n7.h">Photo &amp; video gallery</h3>
+          <p data-i18n="n7.p">Class photos and tournament videos that load fast on a phone.</p>
         </li>
         <li class="need" style="--belt: var(--belt-black)">
           <span class="belt" aria-hidden="true"></span>
-          <h3>Works with the software you already use</h3>
-          <p>Keep your billing software. Your site links to its sign-up and member pages.</p>
-          <p class="sw"><span>Kicksite</span><span>Spark Membership</span><span>Zen Planner</span><span>and others</span></p>
+          <h3 data-i18n="n8.h">Works with the software you already use</h3>
+          <p data-i18n="n8.p">Keep your billing software. Your site links to its sign-up and member pages.</p>
+          <p class="sw" data-i18n="n8.sw"><span>Kicksite</span><span>Spark Membership</span><span>Zen Planner</span><span>and others</span></p>
         </li>
       </ul>
     </div>
@@ -150,37 +154,37 @@
   <section class="block" id="work">
     <div class="wrap">
       <div class="block-head">
-        <p class="label"><span class="kn" aria-hidden="true">二</span>Case studies</p>
-        <h2>Dojo sites I've built</h2>
-        <p>My home dojo of 11 years, and the dojo of 2012 World Champion Rika Usami, a true legend in the karate world. It's an honor to have my work represent the dojo of someone of her caliber. Drag the sliders to compare before and after.</p>
+        <p class="label"><span class="kn" aria-hidden="true">二</span><span data-i18n="work.label">Case studies</span></p>
+        <h2 data-i18n="work.h2">Dojo sites I've built</h2>
+        <p data-i18n="work.p">My home dojo of 11 years, and the dojo of 2012 World Champion Rika Usami, a true legend in the karate world. It's an honor to have my work represent the dojo of someone of her caliber. Drag the sliders to compare before and after.</p>
       </div>
 
       <article class="case" id="aabba">
         <div class="browser">
           <div class="browser-bar"><span class="dots"><i></i><i></i><i></i></span><span class="url">aabbakarateacademy.com</span></div>
           <div class="ba">
-            <img class="shot" src="images/aabba-after.jpg" alt="AABBA Karate homepage after the redesign" loading="lazy" width="1200" height="750">
-            <img class="shot ba-before" src="images/aabba-before.jpg" alt="AABBA Karate homepage before the redesign, in 2024" loading="lazy" width="1200" height="750">
+            <img class="shot" src="images/aabba-after.jpg" alt="AABBA Karate homepage after the redesign" data-i18n-alt="aabba.altAfter" loading="lazy" width="1200" height="750">
+            <img class="shot ba-before" src="images/aabba-before.jpg" alt="AABBA Karate homepage before the redesign, in 2024" data-i18n-alt="aabba.altBefore" loading="lazy" width="1200" height="750">
             <span class="ba-handle" aria-hidden="true"></span>
-            <span class="ba-tag before" aria-hidden="true">Before · 2024</span>
-            <span class="ba-tag after" aria-hidden="true">After</span>
-            <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Compare the old and new AABBA Karate homepage. Lower shows more of the new site, higher shows more of the old one.">
+            <span class="ba-tag before" aria-hidden="true" data-i18n="ba.before2024">Before · 2024</span>
+            <span class="ba-tag after" aria-hidden="true" data-i18n="ba.after">After</span>
+            <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Compare the old and new AABBA Karate homepage. Lower shows more of the new site, higher shows more of the old one." data-i18n-aria="aabba.range">
           </div>
         </div>
         <div class="case-info">
           <div class="case-meta">
             <img class="case-logo" src="images/logos/aabba.png" alt="" width="44" height="44">
-            <div><h3><a href="https://aabbakarateacademy.com" target="_blank" rel="noopener">All American Black Belt Academy</a></h3><p class="label">Karate · San Ramon, CA</p></div>
+            <div><h3><a href="https://aabbakarateacademy.com" target="_blank" rel="noopener">All American Black Belt Academy</a></h3><p class="label" data-i18n="aabba.where">Karate · San Ramon, CA</p></div>
           </div>
-          <p>My home dojo for 11 years. A cleaner redesign of a site families already knew, plus a password-protected Belt Tests page.</p>
+          <p data-i18n="aabba.p">My home dojo for 11 years. A cleaner redesign of a site families already knew, plus a password-protected Belt Tests page.</p>
           <div class="result">
-            <p class="label">Result</p>
-            <p>Belt tests used to be handed out on paper in class, which was hard for Sensei to keep organized. Now Sensei gives each student the password for their rank, and they can open their own test anytime, from any phone.</p>
+            <p class="label" data-i18n="aabba.resultLabel">Result</p>
+            <p data-i18n="aabba.result">Belt tests used to be handed out on paper in class, which was hard for Sensei to keep organized. Now Sensei gives each student the password for their rank, and they can open their own test anytime, from any phone.</p>
           </div>
           <ul class="did">
-            <li>Password-protected belt tests, one password per rank</li>
-            <li>Free intro class call-out on every page</li>
-            <li>Class photo slideshow, and news grouped by year with medal counts</li>
+            <li data-i18n="aabba.d1">Password-protected belt tests, one password per rank</li>
+            <li data-i18n="aabba.d2">Free intro class call-out on every page</li>
+            <li data-i18n="aabba.d3">Class photo slideshow, and news grouped by year with medal counts</li>
           </ul>
         </div>
       </article>
@@ -189,48 +193,49 @@
         <div class="browser">
           <div class="browser-bar"><span class="dots"><i></i><i></i><i></i></span><span class="url">usamirikadojo.com</span></div>
           <div class="ba">
-            <img class="shot natural" src="images/usami-after.jpg" alt="Usami Rika Dojo homepage after the redesign" loading="lazy" width="1200" height="586">
-            <img class="shot natural ba-before" src="images/usami-before.jpg" alt="Usami Rika Dojo homepage before the redesign" loading="lazy" width="1200" height="586">
+            <img class="shot natural" src="images/usami-after.jpg" alt="Usami Rika Dojo homepage after the redesign" data-i18n-alt="usami.altAfter" loading="lazy" width="1200" height="586">
+            <img class="shot natural ba-before" src="images/usami-before.jpg" alt="Usami Rika Dojo homepage before the redesign" data-i18n-alt="usami.altBefore" loading="lazy" width="1200" height="586">
             <span class="ba-handle" aria-hidden="true"></span>
-            <span class="ba-tag before" aria-hidden="true">Before</span>
-            <span class="ba-tag after" aria-hidden="true">After</span>
-            <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Compare the old and new Usami Rika Dojo homepage. Lower shows more of the new site, higher shows more of the old one.">
+            <span class="ba-tag before" aria-hidden="true" data-i18n="ba.before">Before</span>
+            <span class="ba-tag after" aria-hidden="true" data-i18n="ba.after">After</span>
+            <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Compare the old and new Usami Rika Dojo homepage. Lower shows more of the new site, higher shows more of the old one." data-i18n-aria="usami.range">
           </div>
         </div>
         <div class="case-info">
           <div class="case-meta">
             <img class="case-logo" src="images/logos/usami.svg" alt="" width="44" height="44">
-            <div><h3><a href="https://usamirikadojo.com" target="_blank" rel="noopener">Usami Rika Dojo</a></h3><p class="label">Karate · Tottori, Japan</p></div>
+            <div><h3><a href="https://usamirikadojo.com" target="_blank" rel="noopener" data-i18n="usami.name">Usami Rika Dojo</a></h3><p class="label" data-i18n="usami.where">Karate · Tottori, Japan</p></div>
           </div>
-          <p>The dojo of legendary 2012 Karate World Champion Rika Usami. I redesigned her site on my own, then pitched it to her in person when I trained with her in Tottori in June 2026.</p>
+          <p data-i18n="usami.p">The dojo of legendary 2012 Karate World Champion Rika Usami. I redesigned her site on my own, then pitched it to her in person when I trained with her in Tottori in June 2026.</p>
           <ul class="did">
-            <li>New layout and design</li>
-            <li>English and Japanese versions</li>
-            <li>Accurate, rewritten English translations</li>
+            <li data-i18n="usami.d1">New layout and design</li>
+            <li data-i18n="usami.d2">English and Japanese versions</li>
+            <li data-i18n="usami.d3">Accurate, rewritten English translations</li>
           </ul>
           <a class="story" href="https://www.instagram.com/gourdtravels/reel/DcMgHOFyWdk/" target="_blank" rel="noopener">
             <img src="images/usami-reel.jpg" alt="" width="44" height="78" loading="lazy">
-            <span><b>How this project started</b>I redesigned her old site on my own, then pitched it to her when I trained with her in Tottori in June 2026. <u>See the reel →</u></span>
+            <span data-i18n="usami.story"><b>How this project started</b>I redesigned her old site on my own, then pitched it to her when I trained with her in Tottori in June 2026. <u>See the reel →</u></span>
           </a>
         </div>
       </article>
 
-      <p class="more-work">Want to see sites for other kinds of businesses? <a href="https://gordonjaychan.com/web">All my web work →</a></p>
+      <p class="more-work" data-i18n="work.more">Want to see sites for other kinds of businesses? <a href="https://gordonjaychan.com/web">All my web work →</a></p>
     </div>
   </section>
 
   <section class="block band testimonials" id="testimonials">
     <div class="wrap">
       <div class="block-head">
-        <p class="label"><span class="kn" aria-hidden="true">声</span>Testimonials</p>
-        <h2>What people are saying</h2>
+        <h2 data-i18n="quotes.h2">Testimonials</h2>
       </div>
       <div class="quotes">
         <figure class="quote">
-          <blockquote>Gordon has done a superb job redesigning my website. He continues to over deliver in every aspect. When I ask if something is possible he gets the job done even better than I imagine. Gordon has been able to make updates of the website within just a few days of my requests. I would love to recommend his services to every business owner that I know.</blockquote>
+          <blockquote lang="en">Gordon has done a superb job redesigning my website. He continues to over deliver in every aspect. When I ask if something is possible he gets the job done even better than I imagine. Gordon has been able to make updates of the website within just a few days of my requests. I would love to recommend his services to every business owner that I know.</blockquote>
+          <!-- shown only on the Japanese version: a translation, with the English original kept above -->
+          <p class="quote-jp ja-only" lang="ja">「Gordonさんは私のウェブサイトを見事にリニューアルしてくれました。どんなことにも期待以上に応えてくれます。何かできるか相談すると、想像以上の形で実現してくれます。更新をお願いすると、いつも数日以内に対応してくれます。知り合いのすべての経営者に、ぜひ彼のサービスを紹介したいです。」（英語の原文を和訳）</p>
           <figcaption>
             <img class="quote-logo" src="images/logos/aabba.png" alt="" width="40" height="40" loading="lazy">
-            <span><b>Sensei Laura Abello</b><span>All American Black Belt Academy · San Ramon, CA</span></span>
+            <span><b>Sensei Laura Abello</b><span data-i18n="quotes.aabba">All American Black Belt Academy · San Ramon, CA</span></span>
           </figcaption>
         </figure>
         <!-- More quotes go here, same markup. For Rika Usami, put her Japanese under the English:
@@ -241,24 +246,24 @@
 
   <section class="block" id="about">
     <div class="wrap about">
-      <img class="about-photo" src="images/about-kata.jpg" alt="Gordon and a blue belt student practicing the same kata move side by side" loading="lazy" width="800" height="1000">
+      <img class="about-photo" src="images/about-kata.jpg" alt="Gordon and a blue belt student practicing the same kata move side by side" data-i18n-alt="about.alt" loading="lazy" width="800" height="1000">
       <div class="about-text">
-        <p class="label"><span class="kn" aria-hidden="true">三</span>About me</p>
-        <h2>A karate coach who builds websites</h2>
+        <p class="label"><span class="kn" aria-hidden="true">三</span><span data-i18n="about.label">About me</span></p>
+        <h2 data-i18n="about.h2">A karate coach who builds websites</h2>
         <div class="about-group">
-          <h3>On the mat</h3>
-          <p>I started karate at eight and trained at AABBA Karate in San Ramon for 11 years, where I earned my shodan in Hayashi-ha Shitō-ryū. I've also trained in Shotokan for six years and boxed for three. I love all martial arts and combat sports, and I'm always excited to learn more about them!</p>
-          <p>Nowadays, I coach the Santa Clara University Karate club. A few times a year, I travel to Japan and Okinawa to train with 2012 Karate World Champion Rika Usami, a legend of the sport, and at traditional Okinawan karate dojos.</p>
+          <h3 data-i18n="about.g1">On the mat</h3>
+          <p data-i18n="about.p1">I started karate at eight and trained at AABBA Karate in San Ramon for 11 years, where I earned my shodan in Hayashi-ha Shitō-ryū. I've also trained in Shotokan for six years and boxed for three. I love all martial arts and combat sports, and I'm always excited to learn more about them!</p>
+          <p data-i18n="about.p2">Nowadays, I coach the Santa Clara University Karate club. A few times a year, I travel to Japan and Okinawa to train with 2012 Karate World Champion Rika Usami, a legend of the sport, and at traditional Okinawan karate dojos.</p>
         </div>
         <div class="about-group">
-          <h3>Every side of the dojo</h3>
-          <p>I've been the student, the competitor, and the coach, so I build sites around what each of them needs, and around the parent deciding whether to sign their child up.</p>
-          <p>Two months ago, I started judo, and I'm happy to be a white belt again! I know exactly what it feels like to walk into a new school for the first time, and that's one of the people your website will serve.</p>
+          <h3 data-i18n="about.g2">Every side of the dojo</h3>
+          <p data-i18n="about.p3">I've been the student, the competitor, and the coach, so I build sites around what each of them needs, and around the parent deciding whether to sign their child up.</p>
+          <p data-i18n="about.p4">Two months ago, I started judo, and I'm happy to be a white belt again! I know exactly what it feels like to walk into a new school for the first time, and that's one of the people your website will serve.</p>
         </div>
         <div class="about-group">
-          <h3>Behind the screen</h3>
-          <p>By day I'm a quality assurance (QA) engineer at a software company. My job is finding what breaks before customers do, and I check your site the same way before it goes live.</p>
-          <p>I also built a <a href="https://gordonjaychan.com/KataDataAnalysis/" target="_blank" rel="noopener">data analysis site for the 2024–25 WKF kata season</a>, because I love digging into the numbers behind martial arts competition.</p>
+          <h3 data-i18n="about.g3">Behind the screen</h3>
+          <p data-i18n="about.p5">By day I'm a quality assurance (QA) engineer at a software company. My job is finding what breaks before customers do, and I check your site the same way before it goes live.</p>
+          <p data-i18n="about.p6">I also built a <a href="https://gordonjaychan.com/KataDataAnalysis/" target="_blank" rel="noopener">data analysis site for the 2024–25 WKF kata season</a>, because I love digging into the numbers behind martial arts competition.</p>
         </div>
       </div>
     </div>
@@ -267,20 +272,20 @@
   <section class="block" id="pricing">
     <div class="wrap">
       <div class="block-head">
-        <p class="label"><span class="kn" aria-hidden="true">四</span>Pricing</p>
-        <h2>One flat monthly fee</h2>
-        <p>Less than a typical student's monthly tuition, and it covers everything.</p>
+        <p class="label"><span class="kn" aria-hidden="true">四</span><span data-i18n="price.label">Pricing</span></p>
+        <h2 data-i18n="price.h2">One flat monthly fee</h2>
+        <p data-i18n="price.p">Less than a typical student's monthly tuition, and it covers everything.</p>
       </div>
       <div class="price">
-        <div><p class="label">Typical price</p><div class="amount">$95<small>/ month</small></div></div>
+        <div><p class="label" data-i18n="price.typical">Typical price</p><div class="amount">$95<small data-i18n="price.per">/ month</small></div></div>
         <ul>
-          <li>Design &amp; build</li>
-          <li>Hosting</li>
-          <li>Unlimited updates</li>
-          <li>Fixes &amp; support</li>
+          <li data-i18n="price.i1">Design &amp; build</li>
+          <li data-i18n="price.i2">Hosting</li>
+          <li data-i18n="price.i3">Unlimited updates</li>
+          <li data-i18n="price.i4">Fixes &amp; support</li>
         </ul>
-        <a class="btn primary" href="#contact" data-contact>Contact</a>
-        <p class="note">One monthly fee covers building your site, hosting it, and keeping it up to date. No upfront cost. 6-month minimum, then month to month.</p>
+        <a class="btn primary" href="#contact" data-contact data-i18n="nav.contact">Contact</a>
+        <p class="note" data-i18n="price.note">One monthly fee covers building your site, hosting it, and keeping it up to date. No upfront cost. 6-month minimum, then month to month.</p>
       </div>
     </div>
   </section>
@@ -289,32 +294,36 @@
     <div class="wrap faq">
       <div class="block-head">
         <p class="label"><span class="kn" aria-hidden="true">五</span></p>
-        <h2>FAQ</h2>
+        <h2 data-i18n="faq.h2">FAQ</h2>
       </div>
       <div class="faq-list">
         <details>
-          <summary>Do I need to switch my billing or membership software?</summary>
-          <p>No, keep using Kicksite, Spark Membership, Zen Planner, or whatever you already use! Your website links right to its sign-up, booking, and member portal pages, so nothing changes for your students or staff.</p>
+          <summary data-i18n="faq.q1">Do I need to switch my billing or membership software?</summary>
+          <p data-i18n="faq.a1">No, keep using Kicksite, Spark Membership, Zen Planner, or whatever you already use! Your website links right to its sign-up, booking, and member portal pages, so nothing changes for your students or staff.</p>
         </details>
         <details>
-          <summary>Can I update the schedule myself?</summary>
-          <p>You don't have to! Just text or email me the change (even a quick photo of the schedule on your whiteboard works) and I'll take care of it. Every change is included, and I make small changes within 3 days and bigger ones within 5.</p>
+          <summary data-i18n="faq.qTime">How long does it take to build my site?</summary>
+          <p data-i18n="faq.aTime">Usually about a week! It depends on how big a site you want. I'll send you a draft to look over, and nothing goes live until you're happy with it.</p>
         </details>
         <details>
-          <summary>How does the members-only section work?</summary>
-          <p>It's simple! Each group gets its own password, like a rank, your competition team, or your instructors. Students use it to open their group's pages: curriculum, terminology, technique videos, private photo galleries, tournament info, or lesson plans. It's one shared password per group, so it's for class material, not private records. Want to change a password? Just let me know! <a href="demo">Try the demo →</a></p>
+          <summary data-i18n="faq.q2">Can I update the schedule myself?</summary>
+          <p data-i18n="faq.a2">You don't have to! Just text or email me the change (even a quick photo of the schedule on your whiteboard works) and I'll take care of it. Every change is included, and I make small changes within 3 days and bigger ones within 5.</p>
         </details>
         <details>
-          <summary>Do you only build sites for karate schools?</summary>
-          <p>No, I build for any martial arts or combat sports school! I even build websites for businesses that have nothing to do with martial arts, like roofers, chiropractors, and contractors. <a href="https://gordonjaychan.com/web">See all my web work →</a></p>
+          <summary data-i18n="faq.q3">How does the members-only section work?</summary>
+          <p data-i18n="faq.a3">It's simple! Each group gets its own password, like a rank, your competition team, or your instructors. Students use it to open their group's pages: curriculum, terminology, technique videos, private photo galleries, tournament info, or lesson plans. It's one shared password per group, so it's for class material, not private records. Want to change a password? Just let me know! <a href="demo">Try the demo →</a></p>
         </details>
         <details>
-          <summary>I already have a website. Can you redesign it?</summary>
-          <p>Yes, I'd love to! That's exactly what I did for AABBA Karate and Usami Rika Dojo. If you already own your domain, you keep paying for it, and I'll move it over and connect it to your new site, so your web address stays the same.</p>
+          <summary data-i18n="faq.q4">Do you only build sites for karate schools?</summary>
+          <p data-i18n="faq.a4">No, I build for any martial arts or combat sports school! I even build websites for businesses that have nothing to do with martial arts, like roofers, chiropractors, and contractors. <a href="https://gordonjaychan.com/web">See all my web work →</a></p>
         </details>
         <details>
-          <summary>Who owns the website?</summary>
-          <p>You own your domain name, business name, logo, and the photos, videos, and business information you give me. I own the website's design and code, including its layout, styling, and site files.</p>
+          <summary data-i18n="faq.q5">I already have a website. Can you redesign it?</summary>
+          <p data-i18n="faq.a5">Yes, I'd love to! That's exactly what I did for AABBA Karate and Usami Rika Dojo. If you already own your domain, you keep paying for it, and I'll move it over and connect it to your new site, so your web address stays the same.</p>
+        </details>
+        <details>
+          <summary data-i18n="faq.q6">Who owns the website?</summary>
+          <p data-i18n="faq.a6">You own your domain name, business name, logo, and the photos, videos, and business information you give me. I own the website's design and code, including its layout, styling, and site files.</p>
         </details>
       </div>
     </div>
@@ -323,13 +332,13 @@
   <section class="block band cta" id="start">
     <div class="wrap cta-wrap">
       <div>
-        <p class="label"><span class="kn" aria-hidden="true">六</span>Contact</p>
-        <h2>Ready to fill your next beginner class?</h2>
-        <p>Tell me about your school and the vibe you want for your new site. I usually reply within a day or two.</p>
+        <p class="label"><span class="kn" aria-hidden="true">六</span><span data-i18n="nav.contact">Contact</span></p>
+        <h2 data-i18n="cta.h2">Ready to fill your next beginner class?</h2>
+        <p data-i18n="cta.p">Tell me about your school and the vibe you want for your new site. I usually reply within a day or two.</p>
       </div>
       <div class="cta-actions">
-        <a class="btn primary big" href="#contact" data-contact>Start your dojo's website <span aria-hidden="true">→</span></a>
-        <p>Or call/text <a href="tel:+19256058687">(925) 605-8687</a></p>
+        <a class="btn primary big" href="#contact" data-contact data-i18n="cta.btn">Start your dojo's website <span aria-hidden="true">→</span></a>
+        <p data-i18n="cta.call">Or call/text <a href="tel:+19256058687">(925) 605-8687</a></p>
       </div>
     </div>
   </section>
@@ -337,23 +346,25 @@
 
 <dialog class="contact" id="contact" aria-labelledby="contact-title">
   <div class="contact-card">
-    <button class="contact-x" type="button" data-close aria-label="Close">×</button>
-    <p class="label"><span class="kn" aria-hidden="true">道</span>Contact</p>
-    <h2 id="contact-title">Tell me about your school</h2>
-    <p class="contact-sub">I usually reply within a day or two. Have a logo, photos, or videos to share? Text or email them to me after you send this. Prefer to talk? Call/text <a href="tel:+19256058687">(925) 605-8687</a>.</p>
-    <form class="dojo-form" id="dojo-form" action="https://formspree.io/f/mnpnelpr" method="POST" data-subject="Dojo website: {school} ({name})" data-done="Thanks! Your message is on its way. I'll reply within a day or two.">
+    <button class="contact-x" type="button" data-close aria-label="Close" data-i18n-aria="form.close">×</button>
+    <p class="label"><span class="kn" aria-hidden="true">道</span><span data-i18n="nav.contact">Contact</span></p>
+    <h2 id="contact-title" data-i18n="form.h2">Tell me about your school</h2>
+    <p class="contact-sub" data-i18n="form.sub">I usually reply within a day or two. Have a logo, photos, or videos to share? Text or email them to me after you send this. Prefer to talk? Call/text <a href="tel:+19256058687">(925) 605-8687</a>.</p>
+    <form class="dojo-form" id="dojo-form" action="https://formspree.io/f/mnpnelpr" method="POST" data-subject="Dojo website: {school} ({name})" data-done="Thanks! Your message is on its way. I'll reply within a day or two." data-i18n-done="form.done">
       <input type="hidden" name="_subject" value="Dojo website inquiry">
       <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
       <input type="hidden" name="form" value="Dojo website (gordonjaychan.com/dojo)">
       <input type="hidden" name="topic" value="Martial arts school website">
-      <label>Your name<input name="name" required autocomplete="name"></label>
-      <label>Your email<input name="email" type="email" required autocomplete="email"></label>
-      <label>School name<input name="school" required autocomplete="organization"></label>
-      <label><span>Phone <span class="opt">(optional)</span></span><input name="phone" type="tel" autocomplete="tel"></label>
-      <label class="wide"><span>Current website <span class="opt">(optional)</span></span><input name="current_website" inputmode="url" placeholder="yourdojo.com"></label>
-      <label class="wide">Message<textarea name="message" rows="4" required placeholder="Where you're located, your current website, the vibe you want, and links to your social media"></textarea></label>
+      <!-- tells Gordon which version of the page the message came from, so he knows which language to reply in -->
+      <input type="hidden" name="language" id="form-lang" value="English">
+      <label><span data-i18n="form.name">Your name</span><input name="name" required autocomplete="name"></label>
+      <label><span data-i18n="form.email">Your email</span><input name="email" type="email" required autocomplete="email"></label>
+      <label><span data-i18n="form.school">School name</span><input name="school" required autocomplete="organization"></label>
+      <label><span data-i18n="form.phone">Phone <span class="opt">(optional)</span></span><input name="phone" type="tel" autocomplete="tel"></label>
+      <label class="wide"><span data-i18n="form.site">Current website <span class="opt">(optional)</span></span><input name="current_website" inputmode="url" placeholder="yourdojo.com"></label>
+      <label class="wide"><span data-i18n="form.message">Message</span><textarea name="message" rows="4" required placeholder="Where you're located, your current website, the vibe you want, and links to your social media" data-i18n-ph="form.messagePh"></textarea></label>
       <div class="wide form-actions">
-        <button class="btn primary" type="submit">Send message</button>
+        <button class="btn primary" type="submit" data-i18n="form.send">Send message</button>
         <p class="form-status" role="status"></p>
       </div>
     </form>
@@ -367,9 +378,9 @@
       <span class="foot-contact"><span>(925) 605-8687</span> · <span>gordonjaychan1@gmail.com</span></span>
     </div>
     <div class="foot-links">
-      <a class="pill" href="mailto:gordonjaychan1@gmail.com" title="gordonjaychan1@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M4 7l8 6 8-6"/></svg>Email</a>
-      <a class="pill" href="tel:+19256058687" title="Call (925) 605-8687"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h3.5l1.5 4.5-2.2 1.4a11 11 0 0 0 5.3 5.3l1.4-2.2L19 13.5V17a2 2 0 0 1-2 2A15 15 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>Call</a>
-      <a class="pill" href="sms:+19256058687" title="Text (925) 605-8687"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H9l-5 4V6a1 1 0 0 1 1-1z"/></svg>Text</a>
+      <a class="pill" href="mailto:gordonjaychan1@gmail.com" title="gordonjaychan1@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M4 7l8 6 8-6"/></svg><span data-i18n="foot.email">Email</span></a>
+      <a class="pill" href="tel:+19256058687" title="Call (925) 605-8687"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h3.5l1.5 4.5-2.2 1.4a11 11 0 0 0 5.3 5.3l1.4-2.2L19 13.5V17a2 2 0 0 1-2 2A15 15 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg><span data-i18n="foot.call">Call</span></a>
+      <a class="pill" href="sms:+19256058687" title="Text (925) 605-8687"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H9l-5 4V6a1 1 0 0 1 1-1z"/></svg><span data-i18n="foot.text">Text</span></a>
     </div>
   </div>
 </footer>

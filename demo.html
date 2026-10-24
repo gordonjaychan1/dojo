@@ -21,23 +21,28 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Figtree:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@700&text=%E9%81%93%E5%A0%B4&display=swap">
-<link rel="stylesheet" href="assets/css/style.css?v=28">
-<link rel="stylesheet" href="assets/css/demo.css?v=4">
-<script src="assets/js/demo.js?v=1" defer></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@700&text=%E9%81%93%E5%A0%B4%E6%97%A5%E6%9C%AC%E8%AA%9E&display=swap">
+<link rel="stylesheet" href="assets/css/style.css?v=36">
+<link rel="stylesheet" href="assets/css/demo.css?v=8">
+<!-- pick the language before the page paints (same as the main dojo page) -->
+<script>try{var q=new URLSearchParams(location.search).get("lang"),s=localStorage.getItem("dojo-lang"),l=q==="ja"||q==="en"?q:s||((navigator.language||"").toLowerCase().indexOf("ja")===0?"ja":"en");document.documentElement.setAttribute("data-lang",l)}catch(e){}</script>
+<script src="assets/js/i18n.js?v=6" defer></script>
+<script src="assets/js/demo.js?v=2" defer></script>
 </head>
-<body>
+<body data-page="demo">
 
 <header class="top">
   <div class="wrap">
     <span class="brand">
       <img src="favicon.svg" alt="" width="28" height="32">
       <span class="brand-name">Gordon Jay Chan</span>
-      <span class="brand-tag">Dojo websites</span>
+      <span class="brand-tag" data-i18n="brand.tag">Dojo websites</span>
     </span>
-    <nav aria-label="Pages">
-      <a href="./">← Dojo websites</a>
-      <a class="btn primary sm" href="./#contact">Contact</a>
+    <nav aria-label="Pages" data-i18n-aria="demo.navAria">
+      <a href="./" class="demo-back"><span aria-hidden="true">←</span> <span class="back-text" data-i18n="demo.backText">Dojo websites</span></a>
+      <!-- shows the other language: 日本語 on the English page, English on the Japanese page -->
+      <button type="button" class="lang-switch" lang="ja" aria-label="日本語で表示">日本語</button>
+      <a class="btn primary sm" href="./#contact" data-i18n="nav.contact">Contact</a>
     </nav>
   </div>
 </header>
@@ -46,16 +51,16 @@
   <section class="demo-intro">
     <div class="wrap">
       <div class="block-head">
-        <p class="label"><span class="kn" aria-hidden="true">道</span>Members-only demo</p>
-        <h1>Try a members-only section</h1>
-        <p>This school is made up, but the members section works just like the real thing. Pick a group, enter its password, and see what only those students would see.</p>
+        <p class="label"><span class="kn" aria-hidden="true">道</span><span data-i18n="demo.label">Members-only demo</span></p>
+        <h1 data-i18n="demo.h1">Try a members-only section</h1>
+        <p data-i18n="demo.intro">This school is made up, but the members section works just like the real thing. Pick a group, enter its password, and see what only those students would see.</p>
       </div>
-      <div class="pw-hints" aria-label="Demo passwords">
-        <p class="label">Demo passwords · tap one to fill it in</p>
+      <div class="pw-hints" aria-label="Demo passwords" data-i18n-aria="demo.hintsAria">
+        <p class="label" data-i18n="demo.hints">Demo passwords · tap one to fill it in</p>
         <div class="pw-list">
-          <button type="button" class="pw" data-group="blue" data-pw="bluebelt"><b>Blue belt</b><code>bluebelt</code></button>
-          <button type="button" class="pw" data-group="team" data-pw="compete"><b>Competition team</b><code>compete</code></button>
-          <button type="button" class="pw" data-group="staff" data-pw="sensei"><b>Instructors</b><code>sensei</code></button>
+          <button type="button" class="pw" data-group="blue" data-pw="bluebelt"><b data-i18n="demo.gBlue">Blue belt</b><code>bluebelt</code></button>
+          <button type="button" class="pw" data-group="team" data-pw="compete"><b data-i18n="demo.gTeam">Competition team</b><code>compete</code></button>
+          <button type="button" class="pw" data-group="staff" data-pw="sensei"><b data-i18n="demo.gStaff">Instructors</b><code>sensei</code></button>
         </div>
       </div>
     </div>
@@ -69,37 +74,37 @@
         <!-- a pretend school website, styled the way a client's site might look -->
         <div class="ds" id="ds">
           <div class="ds-top">
-            <span class="ds-logo"><span class="ds-mark" aria-hidden="true">道場</span>Your Dojo</span>
-            <span class="ds-nav" aria-hidden="true"><span>Classes</span><span>Schedule</span><span class="on">Members</span></span>
+            <span class="ds-logo"><span class="ds-mark" aria-hidden="true">道場</span><span data-i18n="demo.school">Your Dojo</span></span>
+            <span class="ds-nav" aria-hidden="true" data-i18n="demo.dsNav"><span>Classes</span><span>Schedule</span><span class="on">Members</span></span>
           </div>
 
           <form class="ds-gate" id="gate" novalidate>
-            <h2>Members only</h2>
-            <p>Choose your group and enter the password Sensei gave you.</p>
-            <label>Group
+            <h2 data-i18n="demo.gateH">Members only</h2>
+            <p data-i18n="demo.gateP">Choose your group and enter the password Sensei gave you.</p>
+            <label><span data-i18n="demo.group">Group</span>
               <select id="group">
-                <option value="blue">Blue belt (5th kyu)</option>
-                <option value="team">Competition team</option>
-                <option value="staff">Instructors</option>
+                <option value="blue" data-i18n="demo.optBlue">Blue belt (5th kyu)</option>
+                <option value="team" data-i18n="demo.gTeam">Competition team</option>
+                <option value="staff" data-i18n="demo.gStaff">Instructors</option>
               </select>
             </label>
-            <label>Password
+            <label><span data-i18n="demo.password">Password</span>
               <input id="pw" type="password" autocomplete="off" autocapitalize="none" spellcheck="false">
             </label>
-            <button class="ds-btn" type="submit">Open</button>
+            <button class="ds-btn" type="submit" data-i18n="demo.open">Open</button>
             <p class="ds-msg" id="msg" role="status" aria-live="polite"></p>
           </form>
 
           <!-- Blue belt -->
           <div class="ds-panel" id="panel-blue" hidden>
             <div class="ds-panel-head">
-              <div><p class="ds-kicker">Blue belt · 5th kyu</p><h2>Your next promotion</h2><p>Testing day is Saturday, February 6, 2027. Here's everything you need to know.</p></div>
-              <button class="ds-lock" type="button" data-lock>Lock</button>
+              <div><p class="ds-kicker" data-i18n="demo.b.kicker">Blue belt · 5th kyu</p><h2 data-i18n="demo.b.h">Your next promotion</h2><p data-i18n="demo.b.p">Testing day is Saturday, February 6, 2027. Here's everything you need to know.</p></div>
+              <button class="ds-lock" type="button" data-lock data-i18n="demo.lock">Lock</button>
             </div>
             <div class="ds-grid">
               <div class="ds-card">
-                <h3>Curriculum</h3>
-                <dl class="ds-curr">
+                <h3 data-i18n="demo.b.curr">Curriculum</h3>
+                <dl class="ds-curr" data-i18n="demo.b.currList">
                   <div><dt>Kihon (basics)</dt><dd>Oi zuki (lunge punch), age uke (rising block), soto uke (outside block), mae geri (front kick), mawashi geri (round kick)</dd></div>
                   <div><dt>Kata</dt><dd>Heian Sandan</dd></div>
                   <div><dt>Kumite</dt><dd>Ippon kumite 1–5</dd></div>
@@ -107,8 +112,8 @@
                 </dl>
               </div>
               <div class="ds-card">
-                <h3>Terminology</h3>
-                <dl class="ds-terms">
+                <h3 data-i18n="demo.b.terms">Terminology</h3>
+                <dl class="ds-terms" data-i18n="demo.b.termList">
                   <div><dt>Rei</dt><dd>Bow</dd></div>
                   <div><dt>Hajime</dt><dd>Begin</dd></div>
                   <div><dt>Yame</dt><dd>Stop</dd></div>
@@ -119,12 +124,12 @@
                 </dl>
               </div>
               <div class="ds-card wide">
-                <h3>Technique video</h3>
+                <h3 data-i18n="demo.b.video">Technique video</h3>
                 <button class="ds-video" type="button" data-video>
                   <img src="images/gordon-kick.jpg" alt="" width="780" height="650" loading="lazy">
                   <span class="ds-play" aria-hidden="true"></span>
-                  <span class="ds-video-cap"><b>Yoko geri kekomi (side thrust kick)</b>Step-by-step breakdown · 2:14</span>
-                  <span class="ds-video-note" hidden>On your site, your own video plays right here. Send me an unlisted YouTube link and I'll add it.</span>
+                  <span class="ds-video-cap" data-i18n="demo.b.cap"><b>Yoko geri kekomi (side thrust kick)</b>Step-by-step breakdown · 2:14</span>
+                  <span class="ds-video-note" hidden data-i18n="demo.b.note">On your site, your own video plays right here. Send me an unlisted YouTube link and I'll add it.</span>
                 </button>
               </div>
             </div>
@@ -133,14 +138,14 @@
           <!-- Competition team -->
           <div class="ds-panel" id="panel-team" hidden>
             <div class="ds-panel-head">
-              <div><p class="ds-kicker">Competition team</p><h2>Team page</h2><p>Team members and their families only. Practice is Thursdays, 7:00–8:30 pm.</p></div>
-              <button class="ds-lock" type="button" data-lock>Lock</button>
+              <div><p class="ds-kicker" data-i18n="demo.gTeam">Competition team</p><h2 data-i18n="demo.t.h">Team page</h2><p data-i18n="demo.t.p">Team members and their families only. Practice is Thursdays, 7:00–8:30 pm.</p></div>
+              <button class="ds-lock" type="button" data-lock data-i18n="demo.lock">Lock</button>
             </div>
             <div class="ds-grid">
               <div class="ds-card wide">
-                <h3>Tournament schedule</h3>
+                <h3 data-i18n="demo.t.sched">Tournament schedule</h3>
                 <div class="ds-table-wrap">
-                  <table class="ds-table">
+                  <table class="ds-table" data-i18n="demo.t.table">
                     <thead><tr><th>Date</th><th>Tournament</th><th>Location</th><th>Register by</th></tr></thead>
                     <tbody>
                       <tr><td>Jan 23, 2027</td><td>Winter Invitational</td><td>San Jose, CA</td><td>Jan 9</td></tr>
@@ -151,8 +156,8 @@
                 </div>
               </div>
               <div class="ds-card">
-                <h3>Team rules</h3>
-                <ul class="ds-list">
+                <h3 data-i18n="demo.t.rules">Team rules</h3>
+                <ul class="ds-list" data-i18n="demo.t.ruleList">
                   <li>Arrive 45 minutes before your division starts.</li>
                   <li>Wear the team gi with the dojo patch, and your team jacket between matches.</li>
                   <li>Bring your own mitts, mouthguard, and shin guards for kumite.</li>
@@ -161,13 +166,13 @@
                 </ul>
               </div>
               <div class="ds-card">
-                <h3>Private photo gallery</h3>
-                <p class="ds-note">Only team families can see these photos.</p>
+                <h3 data-i18n="demo.t.gallery">Private photo gallery</h3>
+                <p class="ds-note" data-i18n="demo.t.galleryNote">Only team families can see these photos.</p>
                 <div class="ds-gallery">
-                  <figure><img src="images/demo/karate-kick.jpg" alt="Side kick demonstration in the dojo" width="700" height="466" loading="lazy"><figcaption>Side kick drills</figcaption></figure>
-                  <figure><img src="images/demo/karate-teaching.jpg" alt="Instructor explaining a technique to a student" width="700" height="466" loading="lazy"><figcaption>Kata training</figcaption></figure>
-                  <figure><img src="images/demo/coaching.jpg" alt="Instructor correcting a white belt's technique" width="700" height="653" loading="lazy"><figcaption>Partner work</figcaption></figure>
-                  <figure><img src="images/gordon-kick.jpg" alt="Side kick at team practice" width="780" height="650" loading="lazy"><figcaption>Team practice</figcaption></figure>
+                  <figure><img src="images/demo/karate-kick.jpg" alt="Side kick demonstration in the dojo" data-i18n-alt="demo.t.alt1" width="700" height="466" loading="lazy"><figcaption data-i18n="demo.t.cap1">Side kick drills</figcaption></figure>
+                  <figure><img src="images/demo/karate-teaching.jpg" alt="Instructor explaining a technique to a student" data-i18n-alt="demo.t.alt2" width="700" height="466" loading="lazy"><figcaption data-i18n="demo.t.cap2">Kata training</figcaption></figure>
+                  <figure><img src="images/demo/coaching.jpg" alt="Instructor correcting a white belt's technique" data-i18n-alt="demo.t.alt3" width="700" height="653" loading="lazy"><figcaption data-i18n="demo.t.cap3">Partner work</figcaption></figure>
+                  <figure><img src="images/gordon-kick.jpg" alt="Side kick at team practice" data-i18n-alt="demo.t.alt4" width="780" height="650" loading="lazy"><figcaption data-i18n="demo.t.cap4">Team practice</figcaption></figure>
                 </div>
               </div>
             </div>
@@ -176,14 +181,14 @@
           <!-- Instructors -->
           <div class="ds-panel" id="panel-staff" hidden>
             <div class="ds-panel-head">
-              <div><p class="ds-kicker">Instructors</p><h2>Teaching hub</h2><p>Lesson plans and the teaching schedule for January.</p></div>
-              <button class="ds-lock" type="button" data-lock>Lock</button>
+              <div><p class="ds-kicker" data-i18n="demo.gStaff">Instructors</p><h2 data-i18n="demo.s.h">Teaching hub</h2><p data-i18n="demo.s.p">Lesson plans and the teaching schedule for January.</p></div>
+              <button class="ds-lock" type="button" data-lock data-i18n="demo.lock">Lock</button>
             </div>
             <div class="ds-grid">
               <div class="ds-card">
-                <h3>Lesson plan: Little Dragons (ages 5–7)</h3>
-                <p class="ds-note">Week of January 11</p>
-                <ol class="ds-plan">
+                <h3 data-i18n="demo.s.kidsH">Lesson plan: Little Dragons (ages 5–7)</h3>
+                <p class="ds-note" data-i18n="demo.s.week">Week of January 11</p>
+                <ol class="ds-plan" data-i18n="demo.s.kidsPlan">
                   <li><span>10 min</span>Bow in and warm-up</li>
                   <li><span>10 min</span>"Sensei says" stance game: zenkutsu and kiba dachi</li>
                   <li><span>10 min</span>Front kicks on pads</li>
@@ -192,9 +197,9 @@
                 </ol>
               </div>
               <div class="ds-card">
-                <h3>Lesson plan: Adults</h3>
-                <p class="ds-note">Week of January 11</p>
-                <ol class="ds-plan">
+                <h3 data-i18n="demo.s.adultsH">Lesson plan: Adults</h3>
+                <p class="ds-note" data-i18n="demo.s.week">Week of January 11</p>
+                <ol class="ds-plan" data-i18n="demo.s.adultsPlan">
                   <li><span>10 min</span>Warm-up and stretching</li>
                   <li><span>15 min</span>Kihon combinations across the floor</li>
                   <li><span>20 min</span>Heian Sandan bunkai with a partner</li>
@@ -203,9 +208,9 @@
                 </ol>
               </div>
               <div class="ds-card wide">
-                <h3>Teaching schedule</h3>
+                <h3 data-i18n="demo.s.sched">Teaching schedule</h3>
                 <div class="ds-table-wrap">
-                  <table class="ds-table">
+                  <table class="ds-table" data-i18n="demo.s.table">
                     <thead><tr><th>Day</th><th>Class</th><th>Lead</th><th>Assisting</th></tr></thead>
                     <tbody>
                       <tr><td>Mon 5:00 pm</td><td>Little Dragons</td><td>Sensei Kim</td><td>Senpai Ana</td></tr>
@@ -224,10 +229,10 @@
       </div>
 
       <div class="demo-after">
-        <p>On your site, each group gets its own password, and you can change one anytime by texting me. It's one shared password per group, not individual accounts, so it's for class material, not private records.</p>
+        <p data-i18n="demo.after">On your site, each group gets its own password, and you can change one anytime by texting me. It's one shared password per group, not individual accounts, so it's for class material, not private records.</p>
         <div class="demo-ctas">
-          <a class="btn primary big" href="./#contact">Get a site like this <span aria-hidden="true">→</span></a>
-          <a class="btn big" href="./">Back to dojo websites</a>
+          <a class="btn primary big" href="./#contact" data-i18n="demo.cta">Get a site like this <span aria-hidden="true">→</span></a>
+          <a class="btn big" href="./" data-i18n="demo.back2">Back to dojo websites</a>
         </div>
       </div>
     </div>
@@ -241,9 +246,9 @@
       <span class="foot-contact"><span>(925) 605-8687</span> · <span>gordonjaychan1@gmail.com</span></span>
     </div>
     <div class="foot-links">
-      <a class="pill" href="mailto:gordonjaychan1@gmail.com" title="gordonjaychan1@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M4 7l8 6 8-6"/></svg>Email</a>
-      <a class="pill" href="tel:+19256058687" title="Call (925) 605-8687"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h3.5l1.5 4.5-2.2 1.4a11 11 0 0 0 5.3 5.3l1.4-2.2L19 13.5V17a2 2 0 0 1-2 2A15 15 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>Call</a>
-      <a class="pill" href="sms:+19256058687" title="Text (925) 605-8687"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H9l-5 4V6a1 1 0 0 1 1-1z"/></svg>Text</a>
+      <a class="pill" href="mailto:gordonjaychan1@gmail.com" title="gordonjaychan1@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M4 7l8 6 8-6"/></svg><span data-i18n="foot.email">Email</span></a>
+      <a class="pill" href="tel:+19256058687" title="Call (925) 605-8687"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h3.5l1.5 4.5-2.2 1.4a11 11 0 0 0 5.3 5.3l1.4-2.2L19 13.5V17a2 2 0 0 1-2 2A15 15 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg><span data-i18n="foot.call">Call</span></a>
+      <a class="pill" href="sms:+19256058687" title="Text (925) 605-8687"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H9l-5 4V6a1 1 0 0 1 1-1z"/></svg><span data-i18n="foot.text">Text</span></a>
     </div>
   </div>
 </footer>

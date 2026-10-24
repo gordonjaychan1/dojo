@@ -110,3 +110,14 @@
 /* header: keep "← Dojo websites" on one line; on phones show just the gourd */
 .top nav a { white-space: nowrap; }
 @media (max-width: 520px) { .brand-name { display: none; } }
+
+/* Japanese version of the pretend school: serif headings with Japanese fallbacks, no italic kanji */
+html[lang="ja"] .ds h2, html[lang="ja"] .ds h3, html[lang="ja"] .ds-logo { font-family: Georgia, "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif; }
+html[lang="ja"] .ds-terms dt { font-style: normal; }
+html[lang="ja"] .ds-plan li { grid-template-columns: 3.5rem 1fr; }
+/* focus moves to the group's heading when it opens (for screen readers); no outline needed there */
+.ds-panel h2:focus { outline: none; }
+/* on phones the header's back link shrinks to just the arrow (the text stays for screen readers) */
+@media (max-width: 720px) {
+  .demo-back .back-text { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+}

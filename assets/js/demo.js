@@ -1,6 +1,8 @@
 // Members-only demo. The passwords are printed on the page, so a plain check is fine here.
 // A real school's site locks each group's pages with real encryption instead (see the AABBA belt tests).
 const passwords = { blue: "bluebelt", team: "compete", staff: "sensei" };
+// messages in the current language (i18n.js sets window.t); English if that file didn't load
+const tr = (key, en) => (window.t ? window.t(key, en) : en);
 
 const gate = document.getElementById("gate");
 const group = document.getElementById("group");
@@ -28,7 +30,7 @@ gate.addEventListener("submit", (e) => {
     pw.value = "";
     showPanel(group.value);
   } else {
-    msg.textContent = entered ? "That password doesn't match this group. Try again!" : "Enter the password for your group.";
+    msg.textContent = entered ? tr("demo.msgWrong", "That password doesn't match this group. Try again!") : tr("demo.msgEmpty", "Enter the password for your group.");
     msg.classList.add("error");
     gate.classList.remove("shake");
     void gate.offsetWidth;
@@ -48,7 +50,7 @@ document.querySelectorAll(".pw").forEach((b) => b.addEventListener("click", () =
   showPanel(null);
   group.value = b.dataset.group;
   pw.value = b.dataset.pw;
-  msg.textContent = "Press Open to see this group's page.";
+  msg.textContent = tr("demo.msgReady", "Press Open to see this group's page.");
   msg.classList.remove("error");
   gate.querySelector(".ds-btn").focus({ preventScroll: true });
   frame.scrollIntoView({ block: "nearest", behavior: "smooth" });
