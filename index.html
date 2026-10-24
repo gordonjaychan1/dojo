@@ -23,10 +23,10 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Figtree:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap">
 <!-- only the handful of kanji on the page, so this font file stays tiny -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@700&text=%E7%A9%BA%E6%89%8B%E9%81%93%E4%B8%80%E4%BA%8C%E4%B8%89%E5%9B%9B%E4%BA%94%E5%85%AD%E6%97%A5%E6%9C%AC%E8%AA%9E%E5%A3%B0&display=swap">
-<link rel="stylesheet" href="assets/css/style.css?v=38">
+<link rel="stylesheet" href="assets/css/style.css?v=39">
 <!-- pick the language before the page paints, so Japanese visitors don't see a flash of English -->
 <script>try{var q=new URLSearchParams(location.search).get("lang"),s=localStorage.getItem("dojo-lang"),l=q==="ja"||q==="en"?q:s||((navigator.language||"").toLowerCase().indexOf("ja")===0?"ja":"en");document.documentElement.setAttribute("data-lang",l)}catch(e){}</script>
-<script src="assets/js/i18n.js?v=11" defer></script>
+<script src="assets/js/i18n.js?v=12" defer></script>
 <script src="assets/js/app.js?v=3" defer></script>
 </head>
 <body>
@@ -230,6 +230,15 @@
       </div>
       <div class="quotes">
         <figure class="quote">
+          <!-- Rika Usami wrote this in Japanese: the English version shows a translation, marked as one -->
+          <blockquote data-i18n="quotes.usamiQuote">Thank you so much for a truly wonderful website. I love it.</blockquote>
+          <p class="quote-note en-only">Translated from the original Japanese.</p>
+          <figcaption>
+            <img class="quote-logo" src="images/logos/usami.svg" alt="" width="40" height="40" loading="lazy">
+            <span><b data-i18n="quotes.usamiName">Rika Usami</b><span data-i18n="quotes.usami">2012 Kata World Champion · Usami Rika Dojo, Tottori, Japan</span></span>
+          </figcaption>
+        </figure>
+        <figure class="quote">
           <!-- the quote shows in the reader's language: Sensei's original English, or a Japanese translation marked as one -->
           <blockquote data-i18n="quotes.aabbaQuote">Gordon has done a superb job redesigning my website. He continues to over deliver in every aspect. When I ask if something is possible he gets the job done even better than I imagine. Gordon has been able to make updates of the website within just a few days of my requests. I would love to recommend his services to every business owner that I know.</blockquote>
           <p class="quote-note ja-only" lang="ja">※英語の原文を日本語に訳したものです。</p>
@@ -238,8 +247,8 @@
             <span><b>Sensei Laura Abello</b><span data-i18n="quotes.aabba">All American Black Belt Academy · San Ramon, CA</span></span>
           </figcaption>
         </figure>
-        <!-- More quotes go here, same markup. For a quote given in Japanese (like Rika Usami's), put the
-             English translation in the blockquote and her original Japanese in i18n.js, with a "translated" note on the English side. -->
+        <!-- More quotes go here, same markup. Each quote shows in the reader's language; whichever side is a
+             translation gets a small note (.quote-note with .en-only or .ja-only), like the two above. -->
       </div>
     </div>
   </section>

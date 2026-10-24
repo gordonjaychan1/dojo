@@ -122,6 +122,7 @@ html[lang="ja"] .label, html[lang="ja"] .styles, html[lang="ja"] .brand-tag { le
 .ja-only { display: none; }
 html[lang="ja"] .ja-only { display: block; }
 html[lang="ja"] .btn.ja-only { display: inline-flex; }
+html[lang="ja"] .en-only { display: none; }
 /* LINE's green, so it's instantly recognizable to Japanese visitors */
 .btn.line { background: #06C755; border-color: #06C755; color: #fff; }
 .btn.line:hover { background: #05B34C; border-color: #05B34C; }
@@ -301,7 +302,7 @@ section.block { padding-block: clamp(56px, 8vw, 96px); border-top: 1px solid var
 /* ---------- testimonials (lavender band; hidden until real quotes come in) ---------- */
 .testimonials { border-top: 0; }
 .testimonials .label { color: var(--gry); }
-.quotes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.quotes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: start; }
 @media (max-width: 960px) { .quotes { grid-template-columns: 1fr; } }
 .quote { margin: 0; padding: 24px; border: 1px solid var(--line); border-radius: var(--radius); display: grid; gap: 14px; align-content: start; background: color-mix(in srgb, var(--lav) 70%, #fff); }
 .quote.sample { border-style: dashed; }

@@ -90,6 +90,10 @@ const JA = {
   "work.more": '他の業種のサイトもご覧になりますか？ <a href="https://gordonjaychan.com/web">制作実績の一覧 →</a>',
 
   "quotes.h2": "お客様の声",
+  // Rika Usami's own words (from her email, used with her permission); the English page shows a translation
+  "quotes.usamiQuote": "本当に素晴らしいホームページをありがとうございました。気に入ってます。",
+  "quotes.usamiName": "宇佐美 里香",
+  "quotes.usami": "2012年 空手世界チャンピオン（形）· 宇佐美Rika道場（鳥取県）",
   // Japanese translation of Sensei Abello's English testimonial (a note under it says it's a translation)
   "quotes.aabbaQuote": "Gordonさんは私のウェブサイトを見事にリニューアルしてくれました。どんなことにも期待以上に応えてくれます。何かできるか相談すると、想像以上の形で実現してくれます。更新をお願いすると、いつも数日以内に対応してくれます。知り合いのすべての経営者に、ぜひ彼のサービスを紹介したいです。",
   "quotes.aabba": "All American Black Belt Academy · カリフォルニア州サンラモン",
