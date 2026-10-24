@@ -121,6 +121,11 @@ html[lang="ja"] { word-break: auto-phrase; line-break: strict; overflow-wrap: an
 html[lang="ja"] .label, html[lang="ja"] .styles, html[lang="ja"] .brand-tag { letter-spacing: .04em; }
 .ja-only { display: none; }
 html[lang="ja"] .ja-only { display: block; }
+html[lang="ja"] .btn.ja-only { display: inline-flex; }
+/* LINE's green, so it's instantly recognizable to Japanese visitors */
+.btn.line { background: #06C755; border-color: #06C755; color: #fff; }
+.btn.line:hover { background: #05B34C; border-color: #05B34C; }
+.btn.line svg { width: 20px; height: 20px; }
 /* while i18n.js swaps in the Japanese, keep the page hidden (shown anyway after a moment if the script fails) */
 html[data-lang="ja"]:not([lang="ja"]) body { animation: show-anyway 0s 1.2s forwards; visibility: hidden; }
 @keyframes show-anyway { to { visibility: visible; } }

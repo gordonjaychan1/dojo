@@ -7,7 +7,7 @@
 
 const JA = {
   "meta.title": "空手コーチが作る、道場のためのウェブサイト · Gordon Jay Chan",
-  "meta.desc": "空手コーチが作る、空手・テコンドー・柔術などの道場のためのウェブサイト。無料体験の申し込み、保護者向けの少年部ページ、会員限定の昇級審査ページなど。月額95ドル、初期費用なし。",
+  "meta.desc": "空手コーチが作る、空手・テコンドー・柔術などの道場のためのウェブサイト。無料体験の申し込み、保護者向けの少年部ページ、会員限定の昇級審査ページなど。月額9,500円、初期費用なし。",
 
   "brand.tag": "道場ウェブサイト",
   "nav.aria": "このページの目次",
@@ -110,7 +110,8 @@ const JA = {
   // the English line compares the fee to US monthly tuition; Japanese tuition is usually lower, so this says something else
   "price.p": "初期費用なし。必要なものはすべて月額料金に含まれています。",
   "price.typical": "標準料金",
-  "price.per": "/ 月（米ドル）",
+  // dojos in Japan are billed in yen (the English page stays at US$95)
+  "price.amount": "¥9,500<small>/ 月</small>",
   "price.i1": "デザイン・制作",
   "price.i2": "サーバー管理",
   "price.i3": "更新し放題",
@@ -130,17 +131,19 @@ const JA = {
   "faq.a4": 'いいえ、武道・格闘技の道場ならどこでも対応します！屋根工事、カイロプラクティック院、建設会社など、武道とはまったく関係のない業種のサイトも作っています。 <a href="https://gordonjaychan.com/web">制作実績の一覧を見る →</a>',
   "faq.q5": "すでにサイトがあります。リニューアルできますか？",
   "faq.a5": "はい、喜んで！AABBA空手と宇佐美Rika道場でも、まさにそれを行いました。すでにドメインをお持ちの場合は、そのままご自身で契約を続けていただき、私が新しいサイトに接続するので、アドレスは変わりません。",
+  "faq.qPay": "お支払い方法は？",
+  "faq.aPay": "PayPalで、毎月自動でお支払いいただけます（PayPalに登録したクレジットカードも使えます）。料金は日本円で、月額9,500円のご請求です。毎月の振込の手間はありません！",
   "faq.q6": "ウェブサイトの所有権は誰にありますか？",
   "faq.a6": "ドメイン名、屋号、ロゴ、そしてご提供いただいた写真・動画・事業情報はお客様のものです。ウェブサイトのデザインとコード（レイアウト、スタイル、サイトのファイルを含む）は私に帰属します。",
 
   "cta.h2": "次の初心者クラスを、満員にしませんか？",
   "cta.p": "道場のことと、新しいサイトのイメージを教えてください。通常1〜2日以内にお返事します。",
   "cta.btn": '道場のサイトを始める <span aria-hidden="true">→</span>',
-  "cta.call": 'お電話・SMS：<a href="tel:+19256058687">(925) 605-8687</a>（米国）',
+  "cta.call": 'LINE ID：<a href="https://line.me/ti/p/~gordonjaychan1" target="_blank" rel="noopener">gordonjaychan1</a><br>お電話・SMS：<a href="tel:+19256058687">(925) 605-8687</a>（米国）',
 
   "form.close": "閉じる",
   "form.h2": "道場について教えてください",
-  "form.sub": 'ふだんは1〜2日以内にお返事します。ロゴや写真、動画があれば、送信後にメッセージかメールでお送りください。お電話の方は <a href="tel:+19256058687">(925) 605-8687</a>（米国）まで。',
+  "form.sub": 'ふだんは1〜2日以内にお返事します。ロゴや写真、動画があれば、送信後にメッセージかメールでお送りください。LINE（ID：<a href="https://line.me/ti/p/~gordonjaychan1" target="_blank" rel="noopener">gordonjaychan1</a>）でも気軽にどうぞ。お電話の方は <a href="tel:+19256058687">(925) 605-8687</a>（米国）まで。',
   "form.done": "ありがとうございます！メッセージを受け付けました。1〜2日以内にお返事します。",
   "form.name": "お名前",
   "form.email": "メールアドレス",
