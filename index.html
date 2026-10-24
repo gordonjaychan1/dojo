@@ -23,10 +23,10 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Figtree:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap">
 <!-- only the handful of kanji on the page, so this font file stays tiny -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@700&text=%E7%A9%BA%E6%89%8B%E9%81%93%E4%B8%80%E4%BA%8C%E4%B8%89%E5%9B%9B%E4%BA%94%E5%85%AD%E6%97%A5%E6%9C%AC%E8%AA%9E%E5%A3%B0&display=swap">
-<link rel="stylesheet" href="assets/css/style.css?v=37">
+<link rel="stylesheet" href="assets/css/style.css?v=38">
 <!-- pick the language before the page paints, so Japanese visitors don't see a flash of English -->
 <script>try{var q=new URLSearchParams(location.search).get("lang"),s=localStorage.getItem("dojo-lang"),l=q==="ja"||q==="en"?q:s||((navigator.language||"").toLowerCase().indexOf("ja")===0?"ja":"en");document.documentElement.setAttribute("data-lang",l)}catch(e){}</script>
-<script src="assets/js/i18n.js?v=8" defer></script>
+<script src="assets/js/i18n.js?v=9" defer></script>
 <script src="assets/js/app.js?v=3" defer></script>
 </head>
 <body>
@@ -230,16 +230,16 @@
       </div>
       <div class="quotes">
         <figure class="quote">
-          <blockquote lang="en">Gordon has done a superb job redesigning my website. He continues to over deliver in every aspect. When I ask if something is possible he gets the job done even better than I imagine. Gordon has been able to make updates of the website within just a few days of my requests. I would love to recommend his services to every business owner that I know.</blockquote>
-          <!-- shown only on the Japanese version: a translation, with the English original kept above -->
-          <p class="quote-jp ja-only" lang="ja">「Gordonさんは私のウェブサイトを見事にリニューアルしてくれました。どんなことにも期待以上に応えてくれます。何かできるか相談すると、想像以上の形で実現してくれます。更新をお願いすると、いつも数日以内に対応してくれます。知り合いのすべての経営者に、ぜひ彼のサービスを紹介したいです。」（英語の原文を和訳）</p>
+          <!-- the quote shows in the reader's language: Sensei's original English, or a Japanese translation marked as one -->
+          <blockquote data-i18n="quotes.aabbaQuote">Gordon has done a superb job redesigning my website. He continues to over deliver in every aspect. When I ask if something is possible he gets the job done even better than I imagine. Gordon has been able to make updates of the website within just a few days of my requests. I would love to recommend his services to every business owner that I know.</blockquote>
+          <p class="quote-note ja-only" lang="ja">※英語の原文を日本語に訳したものです。</p>
           <figcaption>
             <img class="quote-logo" src="images/logos/aabba.png" alt="" width="40" height="40" loading="lazy">
             <span><b>Sensei Laura Abello</b><span data-i18n="quotes.aabba">All American Black Belt Academy · San Ramon, CA</span></span>
           </figcaption>
         </figure>
-        <!-- More quotes go here, same markup. For Rika Usami, put her Japanese under the English:
-             <p class="quote-jp" lang="ja">…</p> -->
+        <!-- More quotes go here, same markup. For a quote given in Japanese (like Rika Usami's), put the
+             English translation in the blockquote and her original Japanese in i18n.js, with a "translated" note on the English side. -->
       </div>
     </div>
   </section>
@@ -386,7 +386,6 @@
     <div class="foot-links">
       <a class="pill" href="https://line.me/ti/p/~gordonjaychan1" target="_blank" rel="noopener" title="LINE: gordonjaychan1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4C7 4 3 7.1 3 11c0 2.2 1.3 4.2 3.4 5.5L6 20l3.6-2.2c.8.2 1.6.2 2.4.2 5 0 9-3.1 9-7s-4-7-9-7z"/></svg>LINE</a>
       <a class="pill" href="mailto:gordonjaychan1@gmail.com" title="gordonjaychan1@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M4 7l8 6 8-6"/></svg><span data-i18n="foot.email">Email</span></a>
-      <a class="pill" href="tel:+19256058687" title="Call (925) 605-8687"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h3.5l1.5 4.5-2.2 1.4a11 11 0 0 0 5.3 5.3l1.4-2.2L19 13.5V17a2 2 0 0 1-2 2A15 15 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg><span data-i18n="foot.call">Call</span></a>
       <a class="pill" href="sms:+19256058687" title="Text (925) 605-8687"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H9l-5 4V6a1 1 0 0 1 1-1z"/></svg><span data-i18n="foot.text">Text</span></a>
     </div>
   </div>
