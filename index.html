@@ -23,10 +23,10 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Figtree:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap">
 <!-- only the handful of kanji on the page, so this font file stays tiny -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@700&text=%E7%A9%BA%E6%89%8B%E9%81%93%E4%B8%80%E4%BA%8C%E4%B8%89%E5%9B%9B%E4%BA%94%E5%85%AD%E6%97%A5%E6%9C%AC%E8%AA%9E%E5%A3%B0&display=swap">
-<link rel="stylesheet" href="assets/css/style.css?v=39">
+<link rel="stylesheet" href="assets/css/style.css?v=40">
 <!-- pick the language before the page paints, so Japanese visitors don't see a flash of English -->
 <script>try{var q=new URLSearchParams(location.search).get("lang"),s=localStorage.getItem("dojo-lang"),l=q==="ja"||q==="en"?q:s||((navigator.language||"").toLowerCase().indexOf("ja")===0?"ja":"en");document.documentElement.setAttribute("data-lang",l)}catch(e){}</script>
-<script src="assets/js/i18n.js?v=12" defer></script>
+<script src="assets/js/i18n.js?v=13" defer></script>
 <script src="assets/js/app.js?v=3" defer></script>
 </head>
 <body>
@@ -65,7 +65,14 @@
           <a class="btn primary big" href="#contact" data-contact data-i18n="hero.cta">Get a website for your dojo <span aria-hidden="true">→</span></a>
           <a class="btn big" href="#work" data-i18n="hero.cta2">See dojo sites I've built</a>
         </div>
-        <p class="styles" data-i18n="hero.styles"><span>Karate</span><span>Boxing</span><span>Jiu jitsu</span><span>Taekwondo</span><span>MMA</span><span>Judo</span><span>Kung fu</span><span>+ more</span></p>
+        <!-- Rika Usami's endorsement, right under the buttons (the full card is in Testimonials too) -->
+        <figure class="hero-quote">
+          <blockquote data-i18n="hero.quote">“Thank you so much for a truly wonderful website. I love it.”</blockquote>
+          <figcaption>
+            <img src="images/logos/usami.svg" alt="" width="36" height="36">
+            <span><b data-i18n="quotes.usamiName">Rika Usami</b><span data-i18n="hero.quoteWho">2012 Kata World Champion · translated from Japanese</span></span>
+          </figcaption>
+        </figure>
       </div>
 
       <div class="hero-visual">

@@ -118,7 +118,7 @@ p { margin: 0; }
 html[lang="ja"] body { font-family: var(--body), "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif; }
 html[lang="ja"] h1, html[lang="ja"] h2, html[lang="ja"] h3 { font-family: var(--display), "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif; letter-spacing: 0; line-height: 1.3; }
 html[lang="ja"] { word-break: auto-phrase; line-break: strict; overflow-wrap: anywhere; }
-html[lang="ja"] .label, html[lang="ja"] .styles, html[lang="ja"] .brand-tag { letter-spacing: .04em; }
+html[lang="ja"] .label, html[lang="ja"] .brand-tag { letter-spacing: .04em; }
 .ja-only { display: none; }
 html[lang="ja"] .ja-only { display: block; }
 html[lang="ja"] .btn.ja-only { display: inline-flex; }
@@ -157,7 +157,20 @@ html[data-lang="ja"]:not([lang="ja"]) body { animation: show-anyway 0s 1.2s forw
 }
 .hero-visual .cert { margin-top: -72px; }
 .hero-ctas { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 4px; }
-.styles { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 6px; font-family: var(--mono); font-size: 0.75rem; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); }
+/* Rika Usami's quote under the hero buttons: a small card with a black-belt edge */
+.hero-quote {
+  margin: 10px 0 0; max-width: 34rem; display: grid; gap: 10px; position: relative;
+  padding: 14px 18px 14px 20px; border-radius: var(--radius); background: var(--soft);
+  border: 1px solid var(--line); border-left: 6px solid var(--belt-black);
+}
+/* the red rank stripe near the end of the belt edge */
+.hero-quote::before { content: ""; position: absolute; left: -6px; bottom: 14px; width: 6px; height: 14px; background: var(--shu); }
+.hero-quote blockquote { margin: 0; font-family: var(--display); font-weight: 600; font-size: 1.0625rem; line-height: 1.4; color: var(--ink); }
+.hero-quote figcaption { display: flex; align-items: center; gap: 10px; }
+.hero-quote img { width: 36px; height: 36px; border-radius: 7px; flex: none; }
+.hero-quote figcaption > span { display: grid; gap: 1px; }
+.hero-quote b { font-weight: 600; font-size: 0.9375rem; }
+.hero-quote figcaption > span > span { font-family: var(--mono); font-size: 0.6875rem; letter-spacing: .03em; color: var(--muted); }
 
 /* rank certificate (menjō): lavender paper, vertical 空手道 down the edge */
 .cert {

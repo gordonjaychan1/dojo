@@ -24,7 +24,8 @@ const JA = {
   "hero.l3": "制作・サーバー管理・いつでも更新し放題まで、すべて月額料金に含まれます。",
   "hero.cta": '道場のサイトを作る <span aria-hidden="true">→</span>',
   "hero.cta2": "制作実績を見る",
-  "hero.styles": "<span>空手</span><span>ボクシング</span><span>柔術</span><span>テコンドー</span><span>総合格闘技</span><span>柔道</span><span>カンフー</span><span>ほか</span>",
+  "hero.quote": "「本当に素晴らしいホームページをありがとうございました。気に入ってます。」",
+  "hero.quoteWho": "2012年 空手世界チャンピオン（形）· 宇佐美Rika道場",
   "hero.alt": "白帯の生徒の技を、笑顔で直している黒帯のGordon",
 
   "cert.aria": "Gordonについて",
