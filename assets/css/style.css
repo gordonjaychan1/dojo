@@ -366,6 +366,8 @@ html[lang="ja"] .quote blockquote { line-height: 1.6; }
 @media (max-width: 480px) { .price ul { grid-template-columns: 1fr; } }
 .price li::before { content: "✓"; margin-right: 8px; font-weight: 600; }
 .price .note { color: var(--muted); font-size: 0.9375rem; grid-column: 1 / -1; }
+/* small line under the price; capped width so it wraps instead of widening the price column */
+.price .price-sub { margin-top: 8px; max-width: 15rem; color: var(--muted); font-size: 0.8125rem; line-height: 1.45; }
 
 /* ---------- faq ---------- */
 .faq .block-head { margin-bottom: 24px; }
