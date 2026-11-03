@@ -149,11 +149,11 @@ const JA = {
   "cta.h2": "次の初心者クラスを、満員にしませんか？",
   "cta.p": "道場のことと、新しいサイトのイメージを教えてください。通常1〜2日以内にお返事します。",
   "cta.btn": '道場のサイトを始める <span aria-hidden="true">→</span>',
-  "cta.call": 'LINE ID：<a href="https://line.me/ti/p/~gordonjaychan1" target="_blank" rel="noopener">gordonjaychan1</a><br>お電話・SMS：<a href="tel:+19256058687">(925) 605-8687</a>（米国）',
+  "cta.call": 'LINE ID：<a href="https://line.me/ti/p/~gordonjaychan1" target="_blank" rel="noopener">gordonjaychan1</a>',
 
   "form.close": "閉じる",
   "form.h2": "道場について教えてください",
-  "form.sub": 'ふだんは1〜2日以内にお返事します。ロゴや写真、動画があれば、送信後にメッセージかメールでお送りください。LINE（ID：<a href="https://line.me/ti/p/~gordonjaychan1" target="_blank" rel="noopener">gordonjaychan1</a>）でも気軽にどうぞ。お電話の方は <a href="tel:+19256058687">(925) 605-8687</a>（米国）まで。',
+  "form.sub": 'ふだんは1〜2日以内にお返事します。ロゴや写真、動画があれば、送信後にメッセージかメールでお送りください。LINE（ID：<a href="https://line.me/ti/p/~gordonjaychan1" target="_blank" rel="noopener">gordonjaychan1</a>）でも気軽にどうぞ。',
   "form.done": "ありがとうございます！メッセージを受け付けました。1〜2日以内にお返事します。",
   "form.name": "お名前",
   "form.email": "メールアドレス",
@@ -239,7 +239,6 @@ const JA = {
   "demo.back2": "道場ウェブサイトに戻る",
 
   "foot.email": "メール",
-  "foot.text": "SMS",
 };
 
 // [dataset key, marker attribute, attribute that gets translated]
