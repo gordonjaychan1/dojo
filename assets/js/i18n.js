@@ -24,7 +24,7 @@ const JA = {
   "hero.l3": "制作・サーバー管理・いつでも更新し放題まで、すべて月額料金に含まれます。",
   "hero.cta": '道場のサイトを作る <span aria-hidden="true">→</span>',
   "hero.cta2": "制作実績を見る",
-  "hero.quote": "「本当に素晴らしいホームページをありがとうございました。気に入ってます。」",
+  "hero.quote": "「自分ではなかなか形にできない部分も、センスよくまとめていただけて大満足です！」",
   "hero.quoteWho": "2012年 空手世界チャンピオン（形）· 宇佐美Rika道場",
   "hero.alt": "白帯の生徒の技を、笑顔で直している黒帯のGordon",
 
@@ -92,7 +92,7 @@ const JA = {
 
   "quotes.h2": "お客様の声",
   // Rika Usami's own words (from her email, used with her permission); the English page shows a translation
-  "quotes.usamiQuote": "本当に素晴らしいホームページをありがとうございました。気に入ってます。",
+  "quotes.usamiQuote": "<p>ホームページの制作でGordonさんにお世話になりました！</p><p>こちらで大まかな流れやイメージを考えてお伝えしたのですが、それをもとにデザインや細かい部分まで丁寧に作成していただき、とても素敵なホームページに仕上がりました。</p><p>自分ではなかなか形にできない部分も、センスよくまとめていただけて大満足です！</p><p>やり取りもスムーズで、安心してお願いすることができました。</p>",
   "quotes.usamiName": "宇佐美 里香",
   "quotes.usami": "2012年 空手世界チャンピオン（形）· 宇佐美Rika道場（鳥取県）",
   // Japanese translation of Sensei Abello's English testimonial (a note under it says it's a translation)

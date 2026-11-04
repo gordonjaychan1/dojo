@@ -326,6 +326,7 @@ section.block { padding-block: clamp(56px, 8vw, 96px); border-top: 1px solid var
 .quote.sample { border-style: dashed; }
 .quote blockquote { margin: 0; font-family: var(--display); font-size: var(--step-1); font-weight: 600; line-height: 1.35; }
 .quote blockquote::before { content: "\201C"; display: block; font-size: 3rem; line-height: .7; margin-bottom: 4px; color: var(--shu); }
+.quote blockquote p + p { margin-top: .7em; }
 .quote-note { font-size: 0.8125rem; color: var(--muted); margin-top: -4px; }
 /* "★★★★★ Google review" under a testimonial that was posted on Google */
 .quote-source { justify-self: start; display: inline-flex; align-items: center; gap: 8px; margin-top: -2px; font-size: 0.8125rem; font-weight: 600; color: var(--ink); text-decoration: none; }
